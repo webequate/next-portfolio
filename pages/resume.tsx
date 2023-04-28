@@ -32,7 +32,7 @@ const Resume: NextPage<ResumeProps> = ({ schools, jobs, name, titles }) => {
             {titles.map((title, index) => (
               <h3
                 key={index}
-                className="text-3xl font-bold text-accent-1 dark:text-accent-1"
+                className="text-color-gradient text-3xl font-bold"
               >
                 {title}
               </h3>
@@ -42,7 +42,7 @@ const Resume: NextPage<ResumeProps> = ({ schools, jobs, name, titles }) => {
 
         <div className="mx-auto flex lg:flex-row my-12 align-top">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-2xl text-align-top font-bold uppercase underline underline-offset-8 decoration-dark-1 dark:decoration-light-1">
+            <h2 className="text-2xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1">
               Education
             </h2>
           </div>
@@ -56,7 +56,7 @@ const Resume: NextPage<ResumeProps> = ({ schools, jobs, name, titles }) => {
                   {school.school}
                 </h3>
                 <p className="mt-1 mb-2">
-                  <span className="text-xl font-bold text-accent-1 dark:text-accent-1">
+                  <span className="text-color-gradient text-xl font-bold">
                     {school.program}
                   </span>
                   <span className="font-semibold"> • {school.city} • </span>
@@ -69,7 +69,7 @@ const Resume: NextPage<ResumeProps> = ({ schools, jobs, name, titles }) => {
 
         <div className="mx-auto flex lg:flex-row my-12 align-top">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-2xl text-align-top font-bold uppercase underline underline-offset-8 decoration-dark-1 dark:decoration-light-1">
+            <h2 className="text-2xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1">
               Work Experience
             </h2>
           </div>
@@ -83,7 +83,7 @@ const Resume: NextPage<ResumeProps> = ({ schools, jobs, name, titles }) => {
                   {job.company}
                 </h3>
                 <p className="mt-1 mb-2">
-                  <span className="text-xl font-bold text-accent-1 dark:text-accent-1">
+                  <span className="text-color-gradient text-xl font-bold">
                     {job.role}
                   </span>
                   <span className="font-semibold"> • {job.city} • </span>

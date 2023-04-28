@@ -29,10 +29,6 @@ const Projects: NextPage<ProjectsProps> = ({ projects, name, socialLinks }) => {
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className="text-base text-dark-2 dark:text-light-2"
       >
-        <h1 className="text-xl font-bold uppercase text-dark-1 dark:text-light-1 sm:text-3xl mb-6">
-          Projects
-        </h1>
-
         <ProjectGrid projects={projects} setActiveModal={setActiveModal} />
 
         <ProjectModals

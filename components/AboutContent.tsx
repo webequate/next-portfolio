@@ -16,7 +16,7 @@ const AboutContent: React.FC<AboutContentProps> = ({
   return (
     <div className="w-full lg:w-1/2">
       <div className="text-base text-left max-w-xl text-dark-2 dark:text-light-2 p-0 md:ml-6">
-        <h1 className="text-4xl font-bold text-dark-1 dark:text-light-1 mb-6">
+        <h1 className="text-color-gradient text-4xl font-bold mb-6">
           {aboutIntro}
         </h1>
         {aboutItems.map((aboutItem, index) => (

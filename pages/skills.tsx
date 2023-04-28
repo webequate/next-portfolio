@@ -31,12 +31,9 @@ const Skills: NextPage<SkillsProps> = ({
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className={"text-base text-dark-2 dark:text-light-2"}
       >
-        <h1 className="text-xl font-bold uppercase text-dark-1 dark:text-light-1 sm:text-3xl mb-6">
-          Skills
-        </h1>
-
         {/* Featured Skills */}
         <p className="mt-4 mb-8">
+          <span className="font-bold">Specialties: </span>
           {featuredSkills.map((featuredSkill, index) => (
             <span key={index}>{featuredSkill.description}, </span>
           ))}

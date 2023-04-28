@@ -39,7 +39,7 @@ const SkillBar: React.FC<SkillBarProps> = ({ name, level }) => {
       </div>
       <div className="bg-gradient-to-t from-neutral-200 to-neutral-300 dark:from-neutral-300 dark:to-neutral-400 h-6 rounded">
         <div
-          className={`bg-gradient-to-t from-blue-400 to-blue-600 h-6 rounded transition-all delay-700 duration-1000 ease-in ${
+          className={`bg-color-gradient-skill h-6 rounded transition-all delay-700 duration-1000 ease-in ${
             isVisible ? "" : "w-0"
           }`}
           style={{ width: isVisible ? `${level * 20}%` : undefined }}

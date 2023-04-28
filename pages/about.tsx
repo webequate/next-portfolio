@@ -32,9 +32,6 @@ const About: NextPage<AboutProps> = ({ basics }) => {
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
         <div className="text-base text-dark-2 dark:text-light-2">
-          <h1 className="text-xl font-bold uppercase text-dark-1 dark:text-light-1 sm:text-3xl mb-6">
-            About
-          </h1>
           <div className="mx-auto flex flex-col-reverse lg:flex-row py-5 lg:py-10 lg:mt-5">
             <AboutDetails
               name={name}
