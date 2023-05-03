@@ -15,10 +15,16 @@ type ResumeProps = {
   socialLinks: SocialLink[];
 };
 
-const Resume: NextPage<ResumeProps> = ({ schools, jobs, name, titles }) => {
+const Resume: NextPage<ResumeProps> = ({
+  schools,
+  jobs,
+  name,
+  titles,
+  socialLinks,
+}) => {
   return (
     <>
-      <Header name={name} />
+      <Header name={name} socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}

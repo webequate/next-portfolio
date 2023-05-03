@@ -21,7 +21,7 @@ const Projects: NextPage<ProjectsProps> = ({ projects, name, socialLinks }) => {
 
   return (
     <div className="mx-auto">
-      <Header name={name} />
+      <Header name={name} socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}

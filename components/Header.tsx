@@ -1,17 +1,18 @@
 // components/Header.tsx
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FiX, FiMenu } from "react-icons/fi";
-import logo from "@/public/images/allen.png";
+import type { SocialLink } from "@/types/basics";
+import AllenJohnson from "@/components/AllenJohnson";
+import SocialButton from "@/components/SocialButton";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Hamburger from "@/components/Hamburger";
 
 interface HeaderProps {
   name: string;
+  socialLink: SocialLink;
 }
 
-const Header: React.FC<HeaderProps> = ({ name }) => {
+const Header: React.FC<HeaderProps> = ({ name, socialLink }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   function toggleMenu() {
@@ -20,16 +21,27 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
 
   return (
     <nav>
-      <div className="container mx-auto px-2 pt-6 pb-3 mb-12">
-        <div className="flex items-center justify-between">
-          {/* Home link */}
-          <Link href="/" area-label="Home" className="home-link">
-            <Image src={logo} alt="Logo" width={40} height={40} />
-          </Link>
+      {/* Home link */}
+      <Link
+        href="/"
+        className="text-dark-1 dark:text-light-1 hover:text-accent-light dark:hover:text-accent-light my-4"
+      >
+        <AllenJohnson />
+      </Link>
+
+      <div className="container mx-auto px-2 py-3 mb-6 md:mb-10">
+        <div className="flex justify-center items-center">
+          {/* Extraneous invisible layout widget */}
+          <div className="invisible flex mr-auto">
+            <SocialButton name={socialLink.name} url={socialLink.url} />
+          </div>
 
           {/* Navigation links - Large screen */}
-          <div className="items-center hidden md:block font-general-medium m-0 sm:ml-4 sm:p-0">
+          <div className="hidden md:flex font-general-medium m-0 sm:p-0">
             <div className="nav-primary">
+              <Link href="/" aria-label="About" className="nav-link">
+                Home
+              </Link>
               <Link href="/about" aria-label="About" className="nav-link">
                 About
               </Link>
@@ -49,10 +61,14 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
           </div>
 
           {/* Hamburger menu - Small screen */}
-          <Hamburger showMenu={showMenu} toggleMenu={toggleMenu} />
+          <div className="flex md:hidden">
+            <Hamburger showMenu={showMenu} toggleMenu={toggleMenu} />
+          </div>
 
           {/* Theme switcher */}
-          <ThemeSwitcher />
+          <div className="flex ml-auto">
+            <ThemeSwitcher />
+          </div>
         </div>
 
         {/* Navigation links - Small screen */}

@@ -25,14 +25,17 @@
   "socialLinks": [
     {
       "name": "github",
+      "handle": "webequate",
       "url": "https://github.com/webequate"
     },
     {
       "name": "linkedin",
+      "handle": "allenhjohnson",
       "url": "https://www.linkedin.com/in/allenhjohnson/"
     },
     {
       "name": "twitter",
+      "handle": "WebEquate",
       "url": "https://twitter.com/WebEquate"
     }
   ]

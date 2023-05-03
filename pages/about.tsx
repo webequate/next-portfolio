@@ -2,7 +2,7 @@
 import { GetStaticProps, NextPage } from "next";
 import { motion } from "framer-motion";
 import { connectToDatabase } from "@/lib/mongodb";
-import { Basics } from "@/types/basics";
+import { Basics, SocialLink } from "@/types/basics";
 import Header from "@/components/Header";
 import AboutContent from "@/components/AboutContent";
 import AboutDetails from "@/components/AboutDetails";
@@ -24,7 +24,7 @@ const About: NextPage<AboutProps> = ({ basics }) => {
   } = basics[0];
   return (
     <div className="mx-auto">
-      <Header name={name} />
+      <Header name={name} socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -39,6 +39,7 @@ const About: NextPage<AboutProps> = ({ basics }) => {
               phone={phone}
               website={website}
             />
+
             <AboutContent
               aboutIntro={aboutIntro}
               aboutItems={aboutItems}
@@ -46,6 +47,8 @@ const About: NextPage<AboutProps> = ({ basics }) => {
             />
           </div>
         </div>
+
+        <Footer name={name} />
       </motion.div>
     </div>
   );

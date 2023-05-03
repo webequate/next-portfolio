@@ -20,7 +20,7 @@ const Testimonials: NextPage<TestimonialsProps> = ({
 }) => {
   return (
     <div className="mx-auto">
-      <Header name={name} />
+      <Header name={name} socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}

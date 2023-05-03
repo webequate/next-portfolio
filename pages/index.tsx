@@ -17,7 +17,7 @@ const Home: NextPage<HomeProps> = ({ basics }) => {
   const { name, titles, summaryItems, resumeLink, socialLinks } = basics[0];
   return (
     <div className="mx-auto">
-      <Header name={name} />
+      <Header name={name} socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}
