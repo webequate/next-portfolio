@@ -33,7 +33,7 @@ const About: NextPage<AboutProps> = ({ basics }) => {
       >
         <div className="text-base text-dark-2 dark:text-light-2">
           <div className="flex flex-col-reverse lg:flex-row mx-auto">
-            <div className="w-full lg:w-1/2 md:mr-4">
+            <div className="w-full lg:w-1/2 md:mr-6">
               <AboutDetails
                 name={name}
                 location={location}
@@ -42,7 +42,7 @@ const About: NextPage<AboutProps> = ({ basics }) => {
               />
             </div>
 
-            <div className="w-full lg:w-1/2 md:ml-4">
+            <div className="w-full lg:w-1/2 md:ml-6">
               <AboutContent
                 aboutIntro={aboutIntro}
                 aboutItems={aboutItems}

@@ -31,7 +31,7 @@ const Resume: NextPage<ResumeProps> = ({
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
-        <div className="mx-auto lg:flex lg:flex-row mt-4">
+        <div className="mx-auto lg:flex lg:flex-row mt-4 mb-10">
           <div className="w-full lg:w-1/3"></div>
           <div className="w-full lg:w-2/3">
             <h1 className="text-3xl lg:text-5xl font-bold uppercase mb-4">
@@ -41,7 +41,7 @@ const Resume: NextPage<ResumeProps> = ({
               {titles.map((title, index) => (
                 <h3
                   key={index}
-                  className="text-3xl font-bold text-gradient-dark dark:text-gradient-light"
+                  className="text-2xl md:text-3xl font-bold text-gradient-dark dark:text-gradient-light"
                 >
                   {title}
                 </h3>
@@ -50,7 +50,7 @@ const Resume: NextPage<ResumeProps> = ({
           </div>
         </div>
 
-        <div className="lg:flex lg:flex-row mx-auto my-12 align-top">
+        <div className="lg:flex lg:flex-row mx-auto align-top">
           <div className="w-full lg:w-1/3">
             <h2 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
               Education
@@ -60,16 +60,16 @@ const Resume: NextPage<ResumeProps> = ({
             {schools.map((school, index) => (
               <div
                 key={index}
-                className="text-base text-dark-2 dark:text-light-2 mb-6"
+                className="text-base text-dark-2 dark:text-light-2 mb-5"
               >
-                <h3 className="text-2xl font-bold text-dark-1 dark:text-light-1">
+                <h3 className="text-2xl font-bold text-dark-1 dark:text-light-1 mb-1">
                   {school.school}
                 </h3>
-                <p className="mt-1 mb-2">
-                  <span className="text-gradient-dark dark:text-gradient-light text-xl font-bold">
-                    {school.program}
-                  </span>
-                  <span className="font-semibold"> • {school.city} • </span>
+                <p className="text-gradient-dark dark:text-gradient-light text-xl font-bold mb-1">
+                  {school.program}
+                </p>
+                <p className="mb-2">
+                  <span className="font-semibold">{school.city} • </span>
                   <span className="font-semibold italic">{school.endDate}</span>
                 </p>
               </div>
@@ -87,23 +87,23 @@ const Resume: NextPage<ResumeProps> = ({
             {jobs.map((job, index) => (
               <div
                 key={index}
-                className="text-base text-dark-2 dark:text-light-2 mb-8"
+                className="text-base text-dark-2 dark:text-light-2 mb-10"
               >
-                <h3 className="text-xl lg:text-2xl font-bold text-dark-1 dark:text-light-1">
+                <h3 className="text-2xl font-bold text-dark-1 dark:text-light-1 mb-1">
                   {job.company}
                 </h3>
-                <p className="mt-1 mb-2">
-                  <span className="text-gradient-dark dark:text-gradient-light text-xl font-bold">
-                    {job.role}
-                  </span>
-                  <span className="font-semibold"> • {job.city} • </span>
+                <p className="text-gradient-dark dark:text-gradient-light text-xl font-bold mb-1">
+                  {job.role}
+                </p>
+                <p className="mb-3">
+                  <span className="font-semibold">{job.city} • </span>
                   <span className="font-semibold italic">
                     {job.startDate} - {job.endDate}
                   </span>
                 </p>
-                <ul className="list-disc list-outside ml-4 lg:ml-0">
+                <ul className="list-disc list-outside ml-5 lg:ml-0">
                   {job.achievements.map((achievement, index) => (
-                    <li key={index} className="mb-1">
+                    <li key={index} className="mb-2">
                       {achievement}
                     </li>
                   ))}

@@ -5,8 +5,9 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { FeaturedSkill, RatedSkill } from "@/types/skills";
 import { Basics, SocialLink } from "@/types/basics";
 import Header from "@/components/Header";
+import SkillsFeatured from "@/components/SkillsFeatured";
+import SkillsRated from "@/components/SkillsRated";
 import Footer from "@/components/Footer";
-import SkillBar from "@/components/SkillBar";
 
 type SkillsProps = {
   featuredSkills: FeaturedSkill[];
@@ -31,24 +32,17 @@ const Skills: NextPage<SkillsProps> = ({
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className={"text-base text-dark-2 dark:text-light-2"}
       >
-        {/* Featured Skills */}
-        <p className="mt-4 mb-8">
-          <span className="font-bold">Specialties: </span>
-          {featuredSkills.map((featuredSkill, index) => (
-            <span key={index}>{featuredSkill.description}, </span>
-          ))}
-        </p>
+        <div className="text-base text-dark-2 dark:text-light-2">
+          <div className="flex flex-col md:flex-row mx-auto">
+            <div className="w-full md:w-1/3 md:mr-6">
+              <SkillsFeatured featuredSkills={featuredSkills} />
+            </div>
 
-        {/* Rated Skills */}
-        <ul>
-          {ratedSkills.map((ratedSkill, index) => (
-            <SkillBar
-              key={index}
-              name={ratedSkill.name}
-              level={ratedSkill.level}
-            />
-          ))}
-        </ul>
+            <div className="w-full md:w-2/3 md:ml-6">
+              <SkillsRated ratedSkills={ratedSkills} />
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       <Footer name={name} />

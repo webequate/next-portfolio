@@ -22,11 +22,11 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({
 }) => {
   return (
     <div className="text-base text-left text-dark-2 dark:text-light-2 lg:ml-4 p-6 sm:p-8">
-      <h2 className="text-gradient-dark dark:text-gradient-light font-bold font-general-medium text-2xl mb-8">
+      <h2 className="text-gradient-dark dark:text-gradient-light font-bold font-general-medium text-2xl mb-6">
         Contact Details
       </h2>
-      <p className="text-base mt-4 mb-8">{contactIntro}</p>
-      <ul>
+      <p className="text-base mb-8">{contactIntro}</p>
+      <ul className="mb-10">
         <li className="flex mb-4">
           <i className="text-2xl mr-4 mt-1">
             <FiUser />

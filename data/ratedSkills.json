@@ -35,16 +35,6 @@
     "order": 7
   },
   {
-    "name": "AngularJS",
-    "level": 2,
-    "order": 8
-  },
-  {
-    "name": "jQuery",
-    "level": 4,
-    "order": 9
-  },
-  {
     "name": "PHP",
     "level": 3,
     "order": 10

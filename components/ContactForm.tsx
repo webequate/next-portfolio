@@ -43,7 +43,7 @@ const ContactForm: React.FC = () => {
         onSubmit={handleSubmit}
         className="bg-light-1 dark:bg-dark-1 rounded-xl text-left lg:mr-4 p-6 sm:p-8"
       >
-        <p className="text-gradient-dark dark:text-gradient-light bg-gradient-dark dark:bg-gradient-light font-bold font-general-medium text-2xl mb-8">
+        <p className="text-gradient-dark dark:text-gradient-light bg-gradient-dark dark:bg-gradient-light font-bold font-general-medium text-2xl mb-6">
           Contact Form
         </p>
         <FormInput
