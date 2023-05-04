@@ -31,24 +31,28 @@ const Resume: NextPage<ResumeProps> = ({
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
-        <div className="mx-auto flex lg:flex-row my-12 align-top">
+        <div className="mx-auto lg:flex lg:flex-row mt-4">
           <div className="w-full lg:w-1/3"></div>
           <div className="w-full lg:w-2/3">
-            <h1 className="text-5xl font-bold uppercase mb-2">{name}</h1>
-            {titles.map((title, index) => (
-              <h3
-                key={index}
-                className="text-gradient-dark dark:text-gradient-light text-3xl font-bold"
-              >
-                {title}
-              </h3>
-            ))}
+            <h1 className="text-3xl lg:text-5xl font-bold uppercase mb-4">
+              {name}
+            </h1>
+            <div className="mb-4">
+              {titles.map((title, index) => (
+                <h3
+                  key={index}
+                  className="text-3xl font-bold text-gradient-dark dark:text-gradient-light"
+                >
+                  {title}
+                </h3>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mx-auto flex lg:flex-row my-12 align-top">
+        <div className="lg:flex lg:flex-row mx-auto my-12 align-top">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-2xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1">
+            <h2 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
               Education
             </h2>
           </div>
@@ -73,9 +77,9 @@ const Resume: NextPage<ResumeProps> = ({
           </div>
         </div>
 
-        <div className="mx-auto flex lg:flex-row my-12 align-top">
+        <div className="lg:flex lg:flex-row mx-auto my-12 align-top">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-2xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1">
+            <h2 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
               Work Experience
             </h2>
           </div>
@@ -85,7 +89,7 @@ const Resume: NextPage<ResumeProps> = ({
                 key={index}
                 className="text-base text-dark-2 dark:text-light-2 mb-8"
               >
-                <h3 className="text-2xl font-bold text-dark-1 dark:text-light-1">
+                <h3 className="text-xl lg:text-2xl font-bold text-dark-1 dark:text-light-1">
                   {job.company}
                 </h3>
                 <p className="mt-1 mb-2">
@@ -97,7 +101,7 @@ const Resume: NextPage<ResumeProps> = ({
                     {job.startDate} - {job.endDate}
                   </span>
                 </p>
-                <ul className="list-disc list-outside">
+                <ul className="list-disc list-outside ml-4 lg:ml-0">
                   {job.achievements.map((achievement, index) => (
                     <li key={index} className="mb-1">
                       {achievement}
