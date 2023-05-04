@@ -32,19 +32,23 @@ const About: NextPage<AboutProps> = ({ basics }) => {
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
         <div className="text-base text-dark-2 dark:text-light-2">
-          <div className="mx-auto flex flex-col-reverse lg:flex-row py-5 lg:py-10 lg:mt-5">
-            <AboutDetails
-              name={name}
-              location={location}
-              phone={phone}
-              website={website}
-            />
+          <div className="flex flex-col-reverse lg:flex-row mx-auto">
+            <div className="w-full lg:w-1/2 md:mr-4">
+              <AboutDetails
+                name={name}
+                location={location}
+                phone={phone}
+                website={website}
+              />
+            </div>
 
-            <AboutContent
-              aboutIntro={aboutIntro}
-              aboutItems={aboutItems}
-              socialLinks={socialLinks}
-            />
+            <div className="w-full lg:w-1/2 md:ml-4">
+              <AboutContent
+                aboutIntro={aboutIntro}
+                aboutItems={aboutItems}
+                socialLinks={socialLinks}
+              />
+            </div>
           </div>
         </div>
 

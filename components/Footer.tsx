@@ -12,24 +12,24 @@ const Footer: React.FC<FooterProps> = ({ name }) => {
       <div className="mt-8 pb-8 border-t-2 border-light-1 dark:border-dark-2">
         <div>
           {/* Footer links - large screen */}
-          <div className="mt-8 sm:flex justify-center items-center">
+          <div className="mt-8 hidden sm:flex justify-center items-center">
             <div className="nav-secondary">
-              <Link href="/" aria-label="Home" className="nav-link">
+              <Link href="/" aria-label="Home">
                 Home
               </Link>
-              <Link href="/about" aria-label="About" className="nav-link">
+              <Link href="/about" aria-label="About">
                 About
               </Link>
-              <Link href="/projects" aria-label="Projects" className="nav-link">
+              <Link href="/projects" aria-label="Projects">
                 Projects
               </Link>
-              <Link href="/resume" aria-label="Resume" className="nav-link">
+              <Link href="/resume" aria-label="Resume">
                 Resume
               </Link>
-              <Link href="/skills" aria-label="Skills" className="nav-link">
+              <Link href="/skills" aria-label="Skills">
                 Skills
               </Link>
-              <Link href="/contact" aria-label="Contact" className="nav-link">
+              <Link href="/contact" aria-label="Contact">
                 Contact
               </Link>
             </div>

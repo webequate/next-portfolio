@@ -14,19 +14,18 @@ const AboutContent: React.FC<AboutContentProps> = ({
   socialLinks,
 }) => {
   return (
-    <div className="w-full lg:w-1/2">
-      <div className="text-base text-left max-w-xl text-dark-2 dark:text-light-2 p-0 md:ml-6">
-        <h1 className="text-color-gradient-dark dark:text-color-gradient-light text-4xl font-bold mb-6">
-          {aboutIntro}
-        </h1>
+    <div className="text-dark-2 dark:text-light-2">
+      <h1 className="text-4xl font-bold text-gradient-dark dark:text-gradient-light mb-6">
+        {aboutIntro}
+      </h1>
+      <div className="mb-6">
         {aboutItems.map((aboutItem, index) => (
-          <p
-            key={index}
-            className="text-base text-dark-2 dark:text-light-2 mt-4 mb-4"
-          >
+          <p key={index} className="mb-4">
             {aboutItem}
           </p>
         ))}
+      </div>
+      <div className="mb-6">
         <Social socialLinks={socialLinks} />
       </div>
     </div>

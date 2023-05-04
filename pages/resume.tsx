@@ -38,7 +38,7 @@ const Resume: NextPage<ResumeProps> = ({
             {titles.map((title, index) => (
               <h3
                 key={index}
-                className="text-color-gradient-dark dark:text-color-gradient-light text-3xl font-bold"
+                className="text-gradient-dark dark:text-gradient-light text-3xl font-bold"
               >
                 {title}
               </h3>
@@ -62,7 +62,7 @@ const Resume: NextPage<ResumeProps> = ({
                   {school.school}
                 </h3>
                 <p className="mt-1 mb-2">
-                  <span className="text-color-gradient-dark dark:text-color-gradient-light text-xl font-bold">
+                  <span className="text-gradient-dark dark:text-gradient-light text-xl font-bold">
                     {school.program}
                   </span>
                   <span className="font-semibold"> • {school.city} • </span>
@@ -89,7 +89,7 @@ const Resume: NextPage<ResumeProps> = ({
                   {job.company}
                 </h3>
                 <p className="mt-1 mb-2">
-                  <span className="text-color-gradient-dark dark:text-color-gradient-light text-xl font-bold">
+                  <span className="text-gradient-dark dark:text-gradient-light text-xl font-bold">
                     {job.role}
                   </span>
                   <span className="font-semibold"> • {job.city} • </span>

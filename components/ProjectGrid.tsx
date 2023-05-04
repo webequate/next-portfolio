@@ -23,8 +23,8 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({
           <Image
             src={`/${project.thumb.imgurl}`}
             alt={project.thumb.name}
-            width={400}
-            height={400}
+            width={600}
+            height={600}
             className="rounded shadow-md transition duration-200 ease-in-out transform"
           />
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-200 rounded shadow-md"></div>

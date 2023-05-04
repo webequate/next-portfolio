@@ -16,17 +16,13 @@ const AboutDetails: React.FC<AboutDetailsProps> = ({
   website,
 }) => {
   return (
-    <div className="w-full lg:w-1/2">
-      <div className="text-base text-left max-w-xl text-dark-2 dark:text-light-2 md:mr-6">
-        <Image
-          src="/images/allen-ai.jpg"
-          alt="Allen"
-          width={500}
-          height={625}
-          className="w-100 h-100 rounded-xl p-0 m-0"
-        />
-      </div>
-    </div>
+    <Image
+      src="/images/allen-ai.jpg"
+      alt="Allen"
+      width={600}
+      height={625}
+      className="w-100 h-100 rounded-xl ring-1 ring-dark-3 dark:ring-light-3 md:mr-4"
+    />
   );
 };
 

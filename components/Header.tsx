@@ -1,6 +1,7 @@
 // components/Header.tsx
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import type { SocialLink } from "@/types/basics";
 import HomeButton from "@/components/HomeButton";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
@@ -13,6 +14,8 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ name, socialLink }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const router = useRouter();
+  const route = router.pathname;
 
   function toggleMenu() {
     setShowMenu(!showMenu);
@@ -30,22 +33,46 @@ const Header: React.FC<HeaderProps> = ({ name, socialLink }) => {
           {/* Navigation links - Large screen */}
           <div className="hidden md:flex font-general-medium m-0 sm:p-0">
             <div className="nav-primary">
-              <Link href="/" aria-label="About" className="nav-link">
+              <Link
+                href="/"
+                aria-label="Home"
+                className={route === "/" ? "active" : ""}
+              >
                 Home
               </Link>
-              <Link href="/about" aria-label="About" className="nav-link">
+              <Link
+                href="/about"
+                aria-label="About"
+                className={route === "/about" ? "active" : ""}
+              >
                 About
               </Link>
-              <Link href="/projects" aria-label="Projects" className="nav-link">
+              <Link
+                href="/projects"
+                aria-label="Projects"
+                className={route === "/projects" ? "active" : ""}
+              >
                 Projects
               </Link>
-              <Link href="/resume" aria-label="Resume" className="nav-link">
+              <Link
+                href="/resume"
+                aria-label="Resume"
+                className={route === "/resume" ? "active" : ""}
+              >
                 Resume
               </Link>
-              <Link href="/skills" aria-label="Skills" className="nav-link">
+              <Link
+                href="/skills"
+                aria-label="Skills"
+                className={route === "/skills" ? "active" : ""}
+              >
                 Skills
               </Link>
-              <Link href="/contact" aria-label="Contact" className="nav-link">
+              <Link
+                href="/contact"
+                aria-label="Contact"
+                className={route === "/contact" ? "active" : ""}
+              >
                 Contact
               </Link>
             </div>
@@ -64,22 +91,46 @@ const Header: React.FC<HeaderProps> = ({ name, socialLink }) => {
 
         {/* Navigation links - Small screen */}
         <div className={showMenu ? "nav-mobile" : "hidden"}>
-          <Link href="/" aria-label="Home" className="nav-link">
+          <Link
+            href="/"
+            aria-label="Home"
+            className={route === "/" ? "active" : ""}
+          >
             Home
           </Link>
-          <Link href="/about" aria-label="About" className="nav-link">
+          <Link
+            href="/about"
+            aria-label="About"
+            className={route === "/about" ? "active" : ""}
+          >
             About
           </Link>
-          <Link href="/projects" aria-label="Projects" className="nav-link">
+          <Link
+            href="/projects"
+            aria-label="Projects"
+            className={route === "/projects" ? "active" : ""}
+          >
             Projects
           </Link>
-          <Link href="/resume" aria-label="Resume" className="nav-link">
+          <Link
+            href="/resume"
+            aria-label="Resume"
+            className={route === "/resume" ? "active" : ""}
+          >
             Resume
           </Link>
-          <Link href="/skills" aria-label="Skills" className="nav-link">
+          <Link
+            href="/skills"
+            aria-label="Skills"
+            className={route === "/skills" ? "active" : ""}
+          >
             Skills
           </Link>
-          <Link href="/contact" aria-label="Contact" className="nav-link">
+          <Link
+            href="/contact"
+            aria-label="Contact"
+            className={route === "/contact" ? "active" : ""}
+          >
             Contact
           </Link>
         </div>
