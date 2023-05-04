@@ -24,35 +24,38 @@ const Home: NextPage<HomeProps> = ({ basics }) => {
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
-        <section className="flex flex-col items-top sm:justify-between sm:flex-row mt-5 md:mt-2">
+        <section className="flex flex-col items-top sm:justify-between sm:flex-row">
           <div className="text-left">
-            <h1 className="text-5xl font-bold text-dark-1 dark:text-light-1 sm:text-5xl mb-6 uppercase">
+            <h1 className="text-4xl sm:text-5xl font-bold text-dark-1 dark:text-light-1 mb-4 uppercase">
               {name}
             </h1>
-            {titles.map((title, index) => (
-              <h2
-                key={index}
-                className="text-color-gradient-dark dark:text-color-gradient-light text-3xl font-bold tracking-tight"
-              >
-                {title}
-              </h2>
-            ))}
-            {summaryItems.map((summaryItem, index) => (
-              <p
-                key={index}
-                className="text-base text-dark-2 dark:text-light-2 mt-4 mb-4"
-              >
-                {summaryItem}
-              </p>
-            ))}
-            <Social socialLinks={socialLinks} />
-            <DownloadCV resumelink={resumeLink} />
+            <div className="mb-4 text-2xl sm:text-3xl font-bold tracking-tight text-color-gradient-dark dark:text-color-gradient-light">
+              {titles.map((title, index) => (
+                <h2 key={index}>{title}</h2>
+              ))}
+            </div>
+            <div className="mb-6">
+              {summaryItems.map((summaryItem, index) => (
+                <p
+                  key={index}
+                  className="text-base text-dark-2 dark:text-light-2 mb-4"
+                >
+                  {summaryItem}
+                </p>
+              ))}
+            </div>
+            <div className="mb-6">
+              <Social socialLinks={socialLinks} />
+            </div>
+            <div className="mb-6">
+              <DownloadCV resumelink={resumeLink} />
+            </div>
           </div>
           <motion.div
             initial={{ opacity: 0, y: -180 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-            className="ml-10"
+            className="sm:ml-10"
           >
             <ThemedImage />
           </motion.div>

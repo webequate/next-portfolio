@@ -8,7 +8,7 @@ interface SocialProps {
 
 const Social: React.FC<SocialProps> = ({ socialLinks }) => {
   return (
-    <div className="font-general-regular flex justify-left items-center mt-10">
+    <div className="font-general-regular flex justify-left items-center">
       <ul className="flex gap-4 sm:gap-6">
         {socialLinks.map((socialLink, index) => (
           <SocialButton

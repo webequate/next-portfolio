@@ -60,17 +60,17 @@ a {
   }
   /* Secondary navigation */
   .nav-secondary {
-    @apply flex text-sm font-semibold text-dark-2 dark:text-light-2 rounded-full px-3 mx-6 bg-light-1 dark:bg-dark-1 ring-1 ring-dark-3 dark:ring-light-3;
+    @apply flex justify-center mx-auto text-sm font-semibold text-dark-2 dark:text-light-2 rounded-full sm:px-2 bg-light-1 dark:bg-dark-1 ring-1 ring-dark-3 dark:ring-light-3;
   }
   .nav-secondary .nav-link {
-    @apply hover:text-accent-light dark:hover:text-accent-light sm:mx-4 sm:py-2 duration-300;
+    @apply hover:text-accent-light dark:hover:text-accent-light mx-1 sm:mx-4 py-2 duration-300;
   }
   /* Mobile navigation */
   .nav-mobile {
     @apply block text-lg text-left m-0 mt-3 py-3 justify-between items-center;
   }
   .nav-mobile .nav-link {
-    @apply block text-dark-2 dark:text-light-2 hover:text-accent-light dark:hover:text-accent-light py-2 border-t-2 md:border-t-0 border-dark-3 dark:border-light-3;
+    @apply block text-dark-2 dark:text-light-2 hover:text-accent-light dark:hover:text-accent-light py-2 border-b-2 md:border-b-0 border-dark-3 dark:border-light-3;
   }
   /* Text gradient */
   .text-color-gradient-dark {

@@ -9,10 +9,10 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ name }) => {
   return (
     <div className="mx-auto">
-      <div className="pb-8 mt-8 border-t-2 border-light-1 dark:border-dark-2">
+      <div className="mt-8 pb-8 border-t-2 border-light-1 dark:border-dark-2">
         <div>
           {/* Footer links - large screen */}
-          <div className="m-0 sm:ml-4 mt-8 sm:flex sm:p-0 justify-center items-center">
+          <div className="mt-8 sm:flex justify-center items-center">
             <div className="nav-secondary">
               <Link href="/" aria-label="Home" className="nav-link">
                 Home
