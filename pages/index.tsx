@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = ({ basics }) => {
             {titles.map((title, index) => (
               <h2
                 key={index}
-                className="text-color-gradient text-3xl font-bold tracking-tight"
+                className="text-color-gradient-dark dark:text-color-gradient-light text-3xl font-bold tracking-tight"
               >
                 {title}
               </h2>

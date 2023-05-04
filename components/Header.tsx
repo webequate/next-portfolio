@@ -2,8 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { SocialLink } from "@/types/basics";
-import AllenJohnson from "@/components/AllenJohnson";
-import SocialButton from "@/components/SocialButton";
+import HomeButton from "@/components/HomeButton";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Hamburger from "@/components/Hamburger";
 
@@ -21,19 +20,11 @@ const Header: React.FC<HeaderProps> = ({ name, socialLink }) => {
 
   return (
     <nav>
-      {/* Home link */}
-      <Link
-        href="/"
-        className="text-dark-1 dark:text-light-1 hover:text-accent-light dark:hover:text-accent-light my-4"
-      >
-        <AllenJohnson />
-      </Link>
-
-      <div className="container mx-auto px-2 py-3 mb-6 md:mb-10">
+      <div className="container mx-auto px-0 pt-5 pb-10">
         <div className="flex justify-center items-center">
-          {/* Extraneous invisible layout widget */}
-          <div className="invisible flex mr-auto">
-            <SocialButton name={socialLink.name} url={socialLink.url} />
+          {/* Home link */}
+          <div className="flex mr-auto">
+            <HomeButton />
           </div>
 
           {/* Navigation links - Large screen */}
