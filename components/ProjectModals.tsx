@@ -29,7 +29,7 @@ const ProjectModals: React.FC<ProjectModalsProps> = ({
         >
           <div
             ref={modalContentRef}
-            className="modal-content text-dark-2 dark:text-light-2 bg-light-1 dark:bg-dark-1"
+            className="modal-content text-dark-2 dark:text-light-2 bg-light-1 dark:bg-dark-1 p-4 md:p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -39,38 +39,62 @@ const ProjectModals: React.FC<ProjectModalsProps> = ({
               height={700}
               className="w-full mb-4"
             />
-            <h2 className="text-2xl text-dark-1 dark:text-light-1 mb-4">
+            <h2 className="text-2xl font-bold text-dark-1 dark:text-light-1 mb-2 md:mb-4">
               {project.modal.name}
             </h2>
-            <p className="mb-4">{project.modal.description}</p>
-            <p className="mb-6">{project.modal.tags}</p>
-            {project.modal.mobile && project.modal.path && (
-              <div className="grid grid-cols-5 gap-4 mb-6">
-                <span>Screenshots:</span>
-                <Link href={`/${project.modal.path}/${project.modal.mobile}`}>
-                  <div className="flex space-x-4">
-                    <FaMobileAlt />
-                    Mobile
-                  </div>
-                </Link>
-                <Link href={`/${project.modal.path}/${project.modal.tablet}`}>
-                  <div className="flex">
-                    <FaTabletAlt />
-                    Tablet
-                  </div>
-                </Link>
-                <Link href={`/${project.modal.path}/${project.modal.laptop}`}>
-                  <div className="flex">
-                    <FaLaptop />
-                    Laptop
-                  </div>
-                </Link>
-                <Link href={`/${project.modal.path}/${project.modal.desktop}`}>
-                  <div className="flex">
-                    <FaDesktop />
-                    Desktop
-                  </div>
-                </Link>
+            <p className="mb-4 md:mb-6">{project.modal.description}</p>
+            <p className="mb-4 md:mb-6">Tags: {project.modal.tags}</p>
+            {project.modal.path && (
+              <div className="flex flex-row mb-4 md:mb-6">
+                <div className="hidden md:flex md:mr-6">Screenshots: </div>
+                {project.modal.mobile && (
+                  <Link
+                    href={`/${project.modal.path}/${project.modal.mobile}`}
+                    target="_blank"
+                    className="flex mr-2 md:mr-6"
+                  >
+                    <i className="text-lg mr-1 mt-1">
+                      <FaMobileAlt />
+                    </i>
+                    <span className="text-lg">Mobile</span>
+                  </Link>
+                )}
+                {project.modal.tablet && (
+                  <Link
+                    href={`/${project.modal.path}/${project.modal.tablet}`}
+                    target="_blank"
+                    className="flex mr-2 md:mr-6"
+                  >
+                    <i className="text-lg mr-1 mt-1">
+                      <FaTabletAlt />
+                    </i>
+                    <span className="text-lg">Tablet</span>
+                  </Link>
+                )}
+                {project.modal.laptop && (
+                  <Link
+                    href={`/${project.modal.path}/${project.modal.laptop}`}
+                    target="_blank"
+                    className="flex mr-2 md:mr-6"
+                  >
+                    <i className="text-lg mr-1 mt-1">
+                      <FaLaptop />
+                    </i>
+                    <span className="text-lg">Laptop</span>
+                  </Link>
+                )}
+                {project.modal.desktop && (
+                  <Link
+                    href={`/${project.modal.path}/${project.modal.desktop}`}
+                    target="_blank"
+                    className="flex"
+                  >
+                    <i className="text-lg mr-1 mt-1">
+                      <FaDesktop />
+                    </i>
+                    <span className="text-lg">Desktop</span>
+                  </Link>
+                )}
               </div>
             )}
           </div>
