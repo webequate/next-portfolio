@@ -1,8 +1,7 @@
 // components/ProjectModals.tsx
 import { Project } from "@/types/project";
 import Image from "next/image";
-import Link from "next/link";
-import { FaMobileAlt, FaTabletAlt, FaLaptop, FaDesktop } from "react-icons/fa";
+import ScreenshotLink from "@/components/ScreenshotLink";
 import { useRef } from "react";
 
 interface ProjectModalsProps {
@@ -48,52 +47,32 @@ const ProjectModals: React.FC<ProjectModalsProps> = ({
               <div className="flex flex-row mb-4 md:mb-6">
                 <div className="hidden md:flex md:mr-6">Screenshots: </div>
                 {project.modal.mobile && (
-                  <Link
-                    href={`/${project.modal.path}/${project.modal.mobile}`}
-                    target="_blank"
-                    className="flex mr-2 md:mr-6"
-                  >
-                    <i className="text-lg mr-1 mt-1">
-                      <FaMobileAlt />
-                    </i>
-                    <span className="text-lg">Mobile</span>
-                  </Link>
+                  <ScreenshotLink
+                    name="Mobile"
+                    path={project.modal.path}
+                    url={project.modal.mobile}
+                  />
                 )}
                 {project.modal.tablet && (
-                  <Link
-                    href={`/${project.modal.path}/${project.modal.tablet}`}
-                    target="_blank"
-                    className="flex mr-2 md:mr-6"
-                  >
-                    <i className="text-lg mr-1 mt-1">
-                      <FaTabletAlt />
-                    </i>
-                    <span className="text-lg">Tablet</span>
-                  </Link>
+                  <ScreenshotLink
+                    name="Tablet"
+                    path={project.modal.path}
+                    url={project.modal.tablet}
+                  />
                 )}
                 {project.modal.laptop && (
-                  <Link
-                    href={`/${project.modal.path}/${project.modal.laptop}`}
-                    target="_blank"
-                    className="flex mr-2 md:mr-6"
-                  >
-                    <i className="text-lg mr-1 mt-1">
-                      <FaLaptop />
-                    </i>
-                    <span className="text-lg">Laptop</span>
-                  </Link>
+                  <ScreenshotLink
+                    name="Laptop"
+                    path={project.modal.path}
+                    url={project.modal.laptop}
+                  />
                 )}
                 {project.modal.desktop && (
-                  <Link
-                    href={`/${project.modal.path}/${project.modal.desktop}`}
-                    target="_blank"
-                    className="flex"
-                  >
-                    <i className="text-lg mr-1 mt-1">
-                      <FaDesktop />
-                    </i>
-                    <span className="text-lg">Desktop</span>
-                  </Link>
+                  <ScreenshotLink
+                    name="Desktop"
+                    path={project.modal.path}
+                    url={project.modal.desktop}
+                  />
                 )}
               </div>
             )}
