@@ -8,9 +8,11 @@ interface SkillsRatedProps {
 
 const SkillsRated: React.FC<SkillsRatedProps> = ({ ratedSkills }) => {
   return (
-    <div className="mb-8">
-      <h2 className="text-gradient-dark dark:text-gradient-light font-bold font-general-medium text-2xl mb-8">
-        Rated Skills
+    <div>
+      <h2 className="text-2xl font-bold mb-8">
+        <span className="text-gradient-dark dark:text-gradient-light">
+          Rated Skills
+        </span>
       </h2>
       <ul>
         {ratedSkills.map((ratedSkill, index) => (

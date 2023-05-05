@@ -25,15 +25,15 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({
             alt={project.thumb.name}
             width={600}
             height={600}
-            className="rounded shadow-md transition duration-200 ease-in-out transform"
+            className="rounded shadow-md transition ease-in-out transform duration-300"
           />
-          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-200 rounded shadow-md"></div>
-          <div className="absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 transition duration-200 p-4">
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300 rounded shadow-md"></div>
+          <div className="absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 p-4">
             <h2 className="text-xl mb-2">{project.name}</h2>
             <p>{project.thumb.type}</p>
             <p>@ {project.thumb.company}</p>
           </div>
-          <div className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-200">
+          <div className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
             <span className="text-4xl">+</span>
           </div>
         </a>

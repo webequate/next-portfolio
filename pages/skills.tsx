@@ -34,11 +34,11 @@ const Skills: NextPage<SkillsProps> = ({
       >
         <div className="text-base text-dark-2 dark:text-light-2">
           <div className="flex flex-col md:flex-row mx-auto">
-            <div className="w-full md:w-1/3 md:mr-6">
+            <div className="w-full md:w-1/3 mb-10 lg:mb-0 md:mr-6">
               <SkillsFeatured featuredSkills={featuredSkills} />
             </div>
 
-            <div className="w-full md:w-2/3 md:ml-6">
+            <div className="w-full md:w-2/3 mb-10 lg:mb-0 md:ml-6">
               <SkillsRated ratedSkills={ratedSkills} />
             </div>
           </div>

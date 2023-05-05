@@ -7,9 +7,11 @@ interface SkillsFeaturedProps {
 
 const SkillsFeatured: React.FC<SkillsFeaturedProps> = ({ featuredSkills }) => {
   return (
-    <div className="mb-8">
-      <h2 className="text-gradient-dark dark:text-gradient-light bg-gradient-dark dark:bg-gradient-light font-bold font-general-medium text-2xl mb-8">
-        Featured Skills
+    <div>
+      <h2 className="text-2xl font-bold mb-8">
+        <span className="text-gradient-dark dark:text-gradient-light">
+          Featured Skills
+        </span>
       </h2>
       <ul className="list-disc list-inside lg:list-outside columns-2 md:columns-1">
         {featuredSkills.map((featuredSkill, index) => (

@@ -31,24 +31,22 @@ const About: NextPage<AboutProps> = ({ basics }) => {
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
-        <div className="text-base text-dark-2 dark:text-light-2">
-          <div className="flex flex-col-reverse lg:flex-row mx-auto">
-            <div className="w-full lg:w-1/2 md:mr-6">
-              <AboutDetails
-                name={name}
-                location={location}
-                phone={phone}
-                website={website}
-              />
-            </div>
+        <div className="flex flex-col lg:flex-row-reverse text-base text-dark-2 dark:text-light-2">
+          <div className="w-full lg:w-1/2 mb-2 lg:mb-0 md:ml-6">
+            <AboutContent
+              aboutIntro={aboutIntro}
+              aboutItems={aboutItems}
+              socialLinks={socialLinks}
+            />
+          </div>
 
-            <div className="w-full lg:w-1/2 md:ml-6">
-              <AboutContent
-                aboutIntro={aboutIntro}
-                aboutItems={aboutItems}
-                socialLinks={socialLinks}
-              />
-            </div>
+          <div className="w-full lg:w-1/2 mb-10 lg:mb-0 md:mr-6">
+            <AboutDetails
+              name={name}
+              location={location}
+              phone={phone}
+              website={website}
+            />
           </div>
         </div>
 
