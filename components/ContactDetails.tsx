@@ -25,7 +25,7 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({
   return (
     <div className="text-base text-left text-dark-2 dark:text-light-2 mt-0 lg:mt-8">
       <h2 className="text-2xl font-bold mb-6">
-        <span className="text-gradient-dark dark:text-gradient-light">
+        <span className="text-accent-dark dark:text-accent-light">
           Contact Details
         </span>
       </h2>

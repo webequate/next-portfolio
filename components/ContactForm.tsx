@@ -44,7 +44,7 @@ const ContactForm: React.FC = () => {
         className="bg-light-1 dark:bg-dark-1 rounded-xl text-left lg:mr-4 p-6 pb-2 sm:p-8"
       >
         <h2 className="text-2xl font-bold mb-6">
-          <span className="text-gradient-dark dark:text-gradient-light">
+          <span className="text-accent-dark dark:text-accent-light">
             Contact Form
           </span>
         </h2>
@@ -106,7 +106,7 @@ const ContactForm: React.FC = () => {
           <button
             type="submit"
             aria-label="Send Message"
-            className="text-light-1 dark:text-light-1 bg-gradient-dark dark:bg-gradient-dark hover:bg-gradient-light dark:hover:bg-gradient-light font-general-medium flex justify-center items-center w-40 sm:w-40 mb-6 sm:mb-0 text-lg py-2.5 sm:py-3 rounded-lg duration-300"
+            className="text-light-1 dark:text-light-1 bg-accent-dark dark:bg-accent-dark hover:bg-accent-light dark:hover:bg-accent-light font-general-medium flex justify-center items-center w-40 sm:w-40 mb-6 sm:mb-0 text-lg py-2.5 sm:py-3 rounded-lg duration-300"
           >
             <span className="text-sm sm:text-lg">Send Message</span>
           </button>

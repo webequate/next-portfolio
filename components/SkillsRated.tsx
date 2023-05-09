@@ -10,7 +10,7 @@ const SkillsRated: React.FC<SkillsRatedProps> = ({ ratedSkills }) => {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-8">
-        <span className="text-gradient-dark dark:text-gradient-light">
+        <span className="text-accent-dark dark:text-accent-light">
           Rated Skills
         </span>
       </h2>
