@@ -38,42 +38,42 @@ const Header: React.FC<HeaderProps> = ({ name, socialLink }) => {
                 aria-label="Home"
                 className={route === "/" ? "active" : ""}
               >
-                Home
+                <span>Home</span>
               </Link>
               <Link
                 href="/about"
                 aria-label="About"
                 className={route === "/about" ? "active" : ""}
               >
-                About
+                <span>About</span>
               </Link>
               <Link
                 href="/projects"
                 aria-label="Projects"
-                className={route === "/projects" ? "active" : ""}
+                className={route.startsWith("/projects") ? "active" : ""}
               >
-                Projects
+                <span>Projects</span>
               </Link>
               <Link
                 href="/resume"
                 aria-label="Resume"
                 className={route === "/resume" ? "active" : ""}
               >
-                Resume
+                <span>Resume</span>
               </Link>
               <Link
                 href="/skills"
                 aria-label="Skills"
                 className={route === "/skills" ? "active" : ""}
               >
-                Skills
+                <span>Skills</span>
               </Link>
               <Link
                 href="/contact"
                 aria-label="Contact"
                 className={route === "/contact" ? "active" : ""}
               >
-                Contact
+                <span>Contact</span>
               </Link>
             </div>
           </div>
@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ name, socialLink }) => {
           <Link
             href="/projects"
             aria-label="Projects"
-            className={route === "/projects" ? "active" : ""}
+            className={route.startsWith("/projects") ? "active" : ""}
           >
             <span>Projects</span>
           </Link>

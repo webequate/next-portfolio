@@ -1,23 +1,19 @@
 // components/ProjectGrid.tsx
 import { Project } from "@/types/project";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import Link from "next/link";
 
 interface ProjectGridProps {
   projects: Project[];
-  setActiveModal: (index: number | null) => void;
 }
 
-const ProjectGrid: React.FC<ProjectGridProps> = ({
-  projects,
-  setActiveModal,
-}) => {
+const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-10 text-light-1 dark:text-light-1">
       {projects.map((project, index) => (
-        <a
+        <Link
           key={index}
-          onClick={() => setActiveModal(index)}
+          href={`/projects/${project.id}`}
           className="group relative cursor-pointer"
         >
           <Image
@@ -36,7 +32,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({
           <div className="absolute inset-0 flex items-center justify-center text-white opacity-0 md:group-hover:opacity-100 transition duration-300">
             <span className="text-4xl">+</span>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
