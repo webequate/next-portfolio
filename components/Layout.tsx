@@ -7,7 +7,10 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ title = "Portfolio", children }) => {
+const Layout: React.FC<LayoutProps> = ({
+  title = "Allen's Portfolio",
+  children,
+}) => {
   useEffect(() => {
     document.body.classList.add("flex");
     document.body.classList.add("flex-col");
