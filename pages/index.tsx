@@ -1,23 +1,32 @@
 // pages/index.tsx
 import { GetStaticProps, NextPage } from "next";
 import { motion } from "framer-motion";
-import { connectToDatabase } from "@/lib/mongodb";
-import { Basics } from "@/types/basics";
+import { SocialLink } from "@/types/basics";
+import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import DownloadCV from "@/components/DownloadCV";
 import Social from "@/components/Social";
 import ThemedImage from "@/components/ThemedImage";
 import Footer from "@/components/Footer";
 
-type HomeProps = {
-  basics: Basics[];
+type HomePageProps = {
+  name: string;
+  titles: string[];
+  summaryItems: string[];
+  resumeLink: string;
+  socialLinks: SocialLink[];
 };
 
-const Home: NextPage<HomeProps> = ({ basics }) => {
-  const { name, titles, summaryItems, resumeLink, socialLinks } = basics[0];
+const HomePage: NextPage<HomePageProps> = ({
+  name,
+  titles,
+  summaryItems,
+  resumeLink,
+  socialLinks,
+}) => {
   return (
     <div className="mx-auto">
-      <Header name={name} socialLink={socialLinks[0]} />
+      <Header socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -74,18 +83,17 @@ const Home: NextPage<HomeProps> = ({ basics }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const db = await connectToDatabase(process.env.MONGODB_URI!);
-
-  const basicsCollection = db.collection<Basics>("basics");
-  const basics: Basics[] = await basicsCollection.find().toArray();
-
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   return {
     props: {
-      basics: JSON.parse(JSON.stringify(basics)),
+      name: basics.name,
+      titles: basics.titles,
+      summaryItems: basics.summaryItems,
+      resumeLink: basics.resumeLink,
+      socialLinks: basics.socialLinks,
     },
     revalidate: 60,
   };
 };
 
-export default Home;
+export default HomePage;

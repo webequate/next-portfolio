@@ -1,26 +1,27 @@
 // pages/testimonials.tsx
+import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import { motion } from "framer-motion";
-import { connectToDatabase } from "@/lib/mongodb";
 import { Testimonial } from "@/types/testimonial";
-import { Basics, SocialLink } from "@/types/basics";
+import { SocialLink } from "@/types/basics";
+import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-type TestimonialsProps = {
-  testimonials: Testimonial[];
+type TestimonialsPageProps = {
   name: string;
   socialLinks: SocialLink[];
+  testimonials: Testimonial[];
 };
 
-const Testimonials: NextPage<TestimonialsProps> = ({
-  testimonials,
+const TestimonialsPage: NextPage<TestimonialsPageProps> = ({
   name,
   socialLinks,
+  testimonials,
 }) => {
   return (
     <div className="mx-auto">
-      <Header name={name} socialLink={socialLinks[0]} />
+      <Header socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -47,26 +48,25 @@ const Testimonials: NextPage<TestimonialsProps> = ({
   );
 };
 
-export const getStaticProps: GetStaticProps<TestimonialsProps> = async () => {
-  const db = await connectToDatabase(process.env.MONGODB_URI!);
+export const getStaticProps: GetStaticProps<
+  TestimonialsPageProps
+> = async () => {
+  const client = await clientPromise;
+  const db = client.db("Portfolio");
 
   const testimonialsCollection = db.collection<Testimonial>("testimonials");
   const testimonials: Testimonial[] = await testimonialsCollection
     .find()
-    .sort({ order: 1 })
     .toArray();
-
-  const basicsCollection = db.collection<Basics>("basics");
-  const basics: Basics[] = await basicsCollection.find().toArray();
 
   return {
     props: {
+      name: basics.name,
+      socialLinks: basics.socialLinks,
       testimonials: JSON.parse(JSON.stringify(testimonials)),
-      name: basics[0].name,
-      socialLinks: basics[0].socialLinks,
     },
     revalidate: 60,
   };
 };
 
-export default Testimonials;
+export default TestimonialsPage;

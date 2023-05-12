@@ -1,30 +1,31 @@
 // pages/resume.tsx
+import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import { motion } from "framer-motion";
-import { connectToDatabase } from "@/lib/mongodb";
 import { School, Job } from "@/types/experience";
-import { Basics, SocialLink } from "@/types/basics";
+import { SocialLink } from "@/types/basics";
+import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-type ResumeProps = {
-  schools: School[];
-  jobs: Job[];
+type ResumePageProps = {
   name: string;
   titles: string[];
   socialLinks: SocialLink[];
+  schools: School[];
+  jobs: Job[];
 };
 
-const Resume: NextPage<ResumeProps> = ({
-  schools,
-  jobs,
+const ResumePage: NextPage<ResumePageProps> = ({
   name,
   titles,
   socialLinks,
+  schools,
+  jobs,
 }) => {
   return (
     <>
-      <Header name={name} socialLink={socialLinks[0]} />
+      <Header socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -122,31 +123,26 @@ const Resume: NextPage<ResumeProps> = ({
   );
 };
 
-export const getStaticProps: GetStaticProps<ResumeProps> = async () => {
-  const db = await connectToDatabase(process.env.MONGODB_URI!);
-
-  const basicsCollection = db.collection<Basics>("basics");
-  const basics: Basics[] = await basicsCollection.find().toArray();
+export const getStaticProps: GetStaticProps<ResumePageProps> = async () => {
+  const client = await clientPromise;
+  const db = client.db("Portfolio");
 
   const schoolsCollection = db.collection<School>("schools");
-  const schools: School[] = await schoolsCollection
-    .find()
-    .sort({ order: 1 })
-    .toArray();
+  const schools: School[] = await schoolsCollection.find({}).toArray();
 
   const jobsCollection = db.collection<Job>("jobs");
-  const jobs: Job[] = await jobsCollection.find().sort({ order: -1 }).toArray();
+  const jobs: Job[] = await jobsCollection.find({}).toArray();
 
   return {
     props: {
+      name: basics.name,
+      titles: basics.titles,
+      socialLinks: basics.socialLinks,
       schools: JSON.parse(JSON.stringify(schools)),
       jobs: JSON.parse(JSON.stringify(jobs)),
-      name: basics[0].name,
-      titles: basics[0].titles,
-      socialLinks: basics[0].socialLinks,
     },
     revalidate: 60,
   };
 };
 
-export default Resume;
+export default ResumePage;

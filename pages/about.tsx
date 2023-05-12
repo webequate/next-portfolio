@@ -1,30 +1,35 @@
 // pages/about.tsx
 import { GetStaticProps, NextPage } from "next";
 import { motion } from "framer-motion";
-import { connectToDatabase } from "@/lib/mongodb";
-import { Basics, SocialLink } from "@/types/basics";
+import { SocialLink } from "@/types/basics";
+import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import AboutContent from "@/components/AboutContent";
 import AboutDetails from "@/components/AboutDetails";
 import Footer from "@/components/Footer";
 
-type AboutProps = {
-  basics: Basics[];
+type AboutPageProps = {
+  aboutIntro: string;
+  aboutItems: string[];
+  name: string;
+  location: string;
+  phone: string;
+  website: string;
+  socialLinks: SocialLink[];
 };
 
-const About: NextPage<AboutProps> = ({ basics }) => {
-  const {
-    aboutIntro,
-    aboutItems,
-    name,
-    location,
-    phone,
-    website,
-    socialLinks,
-  } = basics[0];
+const AboutPage: NextPage<AboutPageProps> = ({
+  aboutIntro,
+  aboutItems,
+  name,
+  location,
+  phone,
+  website,
+  socialLinks,
+}) => {
   return (
     <div className="mx-auto">
-      <Header name={name} socialLink={socialLinks[0]} />
+      <Header socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -56,18 +61,19 @@ const About: NextPage<AboutProps> = ({ basics }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<AboutProps> = async () => {
-  const db = await connectToDatabase(process.env.MONGODB_URI!);
-
-  const basicsCollection = db.collection<Basics>("basics");
-  const basics: Basics[] = await basicsCollection.find().toArray();
-
+export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
   return {
     props: {
-      basics: JSON.parse(JSON.stringify(basics)),
+      aboutIntro: basics.aboutIntro,
+      aboutItems: basics.aboutItems,
+      name: basics.name,
+      location: basics.location,
+      phone: basics.phone,
+      website: basics.website,
+      socialLinks: basics.socialLinks,
     },
     revalidate: 60,
   };
 };
 
-export default About;
+export default AboutPage;

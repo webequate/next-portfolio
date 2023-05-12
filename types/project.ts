@@ -1,17 +1,5 @@
 // types/project.ts
-export type Thumb = {
-  name: string;
-  type: string;
-  company: string;
-  imgurl: string;
-};
-
-export type Modal = {
-  name: string;
-  tags: string;
-  description: string;
-  imgurl: string;
-  details: string;
+export type Screenshots = {
   path?: string;
   mobile?: string;
   tablet?: string;
@@ -23,6 +11,15 @@ export type Project = {
   _id: string;
   id: string;
   name: string;
-  thumb: Thumb;
-  modal: Modal;
+  type: string;
+  company: string;
+  thumbImage: string;
+  tags: string;
+  description: string;
+  mainImage: string;
+  details?: string;
+  link?: string;
+  screenshots?: Screenshots;
+  featured?: boolean;
+  order: number;
 };

@@ -1,23 +1,28 @@
 // pages/projects.tsx
+import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import { motion } from "framer-motion";
-import { connectToDatabase } from "@/lib/mongodb";
 import { Project } from "@/types/project";
-import { Basics, SocialLink } from "@/types/basics";
+import { SocialLink } from "@/types/basics";
+import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
 
-interface ProjectsProps {
-  projects: Project[];
+interface ProjectsPageProps {
   name: string;
   socialLinks: SocialLink[];
+  projects: Project[];
 }
 
-const Projects: NextPage<ProjectsProps> = ({ projects, name, socialLinks }) => {
+const ProjectsPage: NextPage<ProjectsPageProps> = ({
+  name,
+  socialLinks,
+  projects,
+}) => {
   return (
     <div className="mx-auto">
-      <Header name={name} socialLink={socialLinks[0]} />
+      <Header socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -33,26 +38,24 @@ const Projects: NextPage<ProjectsProps> = ({ projects, name, socialLinks }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<ProjectsProps> = async () => {
-  const db = await connectToDatabase(process.env.MONGODB_URI!);
+export const getStaticProps: GetStaticProps<ProjectsPageProps> = async () => {
+  const client = await clientPromise;
+  const db = client.db("Portfolio");
 
   const projectsCollection = db.collection<Project>("projects");
   const projects: Project[] = await projectsCollection
-    .find()
+    .find({ featured: true })
     .sort({ order: 1 })
     .toArray();
 
-  const basicsCollection = db.collection<Basics>("basics");
-  const basics: Basics[] = await basicsCollection.find().toArray();
-
   return {
     props: {
+      name: basics.name,
+      socialLinks: basics.socialLinks,
       projects: JSON.parse(JSON.stringify(projects)),
-      name: basics[0].name,
-      socialLinks: basics[0].socialLinks,
     },
     revalidate: 60,
   };
 };
 
-export default Projects;
+export default ProjectsPage;

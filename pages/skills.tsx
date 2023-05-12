@@ -1,30 +1,31 @@
 // pages/skills.tsx
+import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import { motion } from "framer-motion";
-import { connectToDatabase } from "@/lib/mongodb";
 import { FeaturedSkill, RatedSkill } from "@/types/skills";
-import { Basics, SocialLink } from "@/types/basics";
+import { SocialLink } from "@/types/basics";
+import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import SkillsFeatured from "@/components/SkillsFeatured";
 import SkillsRated from "@/components/SkillsRated";
 import Footer from "@/components/Footer";
 
-type SkillsProps = {
-  featuredSkills: FeaturedSkill[];
-  ratedSkills: RatedSkill[];
+type SkillsPageProps = {
   name: string;
   socialLinks: SocialLink[];
+  featuredSkills: FeaturedSkill[];
+  ratedSkills: RatedSkill[];
 };
 
-const Skills: NextPage<SkillsProps> = ({
-  featuredSkills,
-  ratedSkills,
+const SkillsPage: NextPage<SkillsPageProps> = ({
   name,
   socialLinks,
+  featuredSkills,
+  ratedSkills,
 }) => {
   return (
     <div className="mx-auto">
-      <Header name={name} socialLink={socialLinks[0]} />
+      <Header socialLink={socialLinks[0]} />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -50,34 +51,30 @@ const Skills: NextPage<SkillsProps> = ({
   );
 };
 
-export const getStaticProps: GetStaticProps<SkillsProps> = async () => {
-  const db = await connectToDatabase(process.env.MONGODB_URI!);
+export const getStaticProps: GetStaticProps<SkillsPageProps> = async () => {
+  const client = await clientPromise;
+  const db = client.db("Portfolio");
+
+  const ratedSkillsCollection = db.collection<RatedSkill>("ratedSkills");
+  const ratedSkills: RatedSkill[] = await ratedSkillsCollection
+    .find()
+    .toArray();
 
   const featuredSkillsCollection =
     db.collection<FeaturedSkill>("featuredSkills");
   const featuredSkills: FeaturedSkill[] = await featuredSkillsCollection
     .find()
-    .sort({ order: 1 })
     .toArray();
-
-  const ratedSkillsCollection = db.collection<RatedSkill>("ratedSkills");
-  const ratedSkills: RatedSkill[] = await ratedSkillsCollection
-    .find()
-    .sort({ order: 1 })
-    .toArray();
-
-  const basicsCollection = db.collection<Basics>("basics");
-  const basics: Basics[] = await basicsCollection.find().toArray();
 
   return {
     props: {
-      featuredSkills: JSON.parse(JSON.stringify(featuredSkills)),
+      name: basics.name,
+      socialLinks: basics.socialLinks,
       ratedSkills: JSON.parse(JSON.stringify(ratedSkills)),
-      name: basics[0].name,
-      socialLinks: basics[0].socialLinks,
+      featuredSkills: JSON.parse(JSON.stringify(featuredSkills)),
     },
     revalidate: 60,
   };
 };
 
-export default Skills;
+export default SkillsPage;
