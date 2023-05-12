@@ -1,5 +1,6 @@
 // components/SkillsRated.tsx
 import type { RatedSkill } from "@/types/skills";
+import Heading from "@/components/Heading";
 import SkillBar from "@/components/SkillBar";
 
 interface SkillsRatedProps {
@@ -9,11 +10,7 @@ interface SkillsRatedProps {
 const SkillsRated: React.FC<SkillsRatedProps> = ({ ratedSkills }) => {
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-8">
-        <span className="text-accent-dark dark:text-accent-light">
-          Rated Skills
-        </span>
-      </h2>
+      <Heading text="Rated Skills" />
       <ul>
         {ratedSkills.map((ratedSkill, index) => (
           <SkillBar

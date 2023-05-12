@@ -1,10 +1,17 @@
 // types/project.ts
-export type Screenshots = {
+export type ProjectScreenshots = {
   path?: string;
   mobile?: string;
   tablet?: string;
   laptop?: string;
   desktop?: string;
+};
+
+export type ProjectStatus = {
+  active?: boolean;
+  activeOrder?: number;
+  featured?: boolean;
+  featuredOrder?: number;
 };
 
 export type Project = {
@@ -19,8 +26,6 @@ export type Project = {
   mainImage: string;
   details?: string;
   link?: string;
-  screenshots?: Screenshots;
-  featured?: boolean;
-  highlyFeatured?: boolean;
-  order: number;
+  screenshots?: ProjectScreenshots;
+  status?: ProjectStatus;
 };

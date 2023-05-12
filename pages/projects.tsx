@@ -6,6 +6,7 @@ import { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
 import Header from "@/components/Header";
+import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
 
@@ -30,9 +31,9 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className="text-base text-dark-2 dark:text-light-2"
       >
+        <Heading text="Projects" />
         <ProjectGrid projects={projects} path="projects" />
       </motion.div>
-
       <Footer name={name} />
     </div>
   );
@@ -44,8 +45,8 @@ export const getStaticProps: GetStaticProps<ProjectsPageProps> = async () => {
 
   const projectsCollection = db.collection<Project>("projects");
   const projects: Project[] = await projectsCollection
-    .find({ featured: true })
-    .sort({ order: 1 })
+    .find({ "status.active": true })
+    .sort({ "status.activeOrder": 1 })
     .toArray();
 
   return {

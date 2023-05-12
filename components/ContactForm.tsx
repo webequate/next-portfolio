@@ -1,6 +1,7 @@
 // components/ContactForm.tsx
 import { useState } from "react";
 import { ContactForm as ContactFormData } from "@/interfaces/ContactForm";
+import Heading from "@/components/Heading";
 import FormInput from "@/components/FormInput";
 
 const ContactForm: React.FC = () => {
@@ -43,11 +44,7 @@ const ContactForm: React.FC = () => {
         onSubmit={handleSubmit}
         className="bg-light-1 dark:bg-dark-1 rounded-xl text-left lg:mr-4 p-6 pb-2 sm:p-8"
       >
-        <h2 className="text-2xl font-bold mb-6">
-          <span className="text-accent-dark dark:text-accent-light">
-            Contact Form
-          </span>
-        </h2>
+        <Heading text="Contact Form" />
         <FormInput
           inputLabel="Full Name"
           labelFor="name"

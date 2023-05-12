@@ -72,8 +72,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const projectsCollection = db.collection<Project>("projects");
   const projects: Project[] = await projectsCollection
-    .find({ highlyFeatured: true })
-    .sort({ order: 1 })
+    .find({ "status.featured": true })
+    .sort({ "status.featuredOrder": 1 })
     .toArray();
 
   const paths = projects.map((project) => ({
@@ -95,8 +95,8 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async ({
 
   const projectsCollection = db.collection<Project>("projects");
   const projects: Project[] = await projectsCollection
-    .find({ highlyFeatured: true })
-    .sort({ order: 1 })
+    .find({ "status.featured": true })
+    .sort({ "status.featuredOrder": 1 })
     .toArray();
 
   const projectIndex = projects.findIndex((p) => p.id === params.id);

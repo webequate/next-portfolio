@@ -1,36 +1,130 @@
 [
   {
+    "id": "aliens",
+    "name": "Allen's Aliens",
+    "type": "Web Development & Social Media",
+    "company": "WebEquate, Denver",
+    "thumbImage": "images/portfolio/aliens-2.jpg",
+    "tags": "Web Development, Social Media, Next.js, React, TypeScript, MongoDB, TailwindCSS",
+    "description": "A social media marketing campaign, including glow-in-the-dark aliens, double-sided glossy business cards, Instagram photo feed, Facebook page, and responsive landing page built with Next.js, React, TypeScript, and MongoDB.",
+    "mainImage": "images/portfolio/modals/m-aliens-2.jpg",
+    "details": "https://www.instagram.com/real_allens_aliens",
+    "link": "http://www.allensaliens.com",
+    "status": {
+      "active": true,
+      "activeOrder": 1,
+      "featured": true,
+      "featuredOrder": 1
+    }
+  },
+  {
+    "id": "jackrabbit",
+    "name": "JackRabbit Homepage",
+    "type": "Web Development",
+    "company": "JackRabbit, Denver",
+    "thumbImage": "images/portfolio/jackrabbit.jpg",
+    "tags": "Web Development, Responsive Design, HTML, CSS, JavaScript",
+    "description": "Redesign and rebuild of the JackRabbit.com e-commerce website homepage.",
+    "mainImage": "images/portfolio/modals/m-jackrabbit.jpg",
+    "link": "https://www.jackrabbit.com",
+    "screenshots": {
+      "path": "images/portfolio/jr/screenshot/jr-homepage-redesign",
+      "mobile": "jackrabbit-360.png",
+      "tablet": "jackrabbit-768.png",
+      "laptop": "jackrabbit-1024.png",
+      "desktop": "jackrabbit-1280.png"
+    },
+    "status": {
+      "active": true,
+      "activeOrder": 2,
+      "featured": true,
+      "featuredOrder": 2
+    }
+  },
+  {
+    "id": "fireman",
+    "name": "Fireman Creative",
+    "type": "Web Development",
+    "company": "Fireman Creative, Pittsburgh",
+    "thumbImage": "images/portfolio/fireman.jpg",
+    "tags": "Web Development, PHP, MySQL, HTML, CSS, JavaScript",
+    "description": "Home page and portfolio site for Fireman Creative, a creative agency where I was Senior Web Developer for two years.",
+    "mainImage": "images/portfolio/modals/m-fireman.jpg",
+    "details": "http://www.webequate.com/samplework/#fireman",
+    "status": {
+      "active": true,
+      "activeOrder": 3,
+      "featured": true,
+      "featuredOrder": 3
+    }
+  },
+  {
+    "id": "release",
+    "name": "JackRabbit Shoe Release Calendar",
+    "type": "Web Development & E-Commerce",
+    "company": "JackRabbit, Denver",
+    "thumbImage": "images/portfolio/release.jpg",
+    "tags": "Web Development, HTML, CSS, JavaScript, Responsive Design, E-Commerce",
+    "description": "Running shoe release calendar for JackRabbit.com, with custom CMS setup and integration.",
+    "mainImage": "images/portfolio/modals/m-release.jpg",
+    "link": "https://www.jackrabbit.com/info/release-calendar",
+    "screenshots": {
+      "path": "images/portfolio/jr/screenshot/jr-release-calendar",
+      "mobile": "jackrabbit-release-calendar-360.png",
+      "tablet": "jackrabbit-release-calendar-768.png",
+      "laptop": "jackrabbit-release-calendar-1024.png",
+      "desktop": "jackrabbit-release-calendar-1280.png"
+    },
+    "status": {
+      "active": true,
+      "activeOrder": 4,
+      "featured": true,
+      "featuredOrder": 4
+    }
+  },
+  {
     "id": "roger",
     "name": "Roger Hayden Johnson",
     "type": "Web Design & Development",
     "company": "WebEquate, Denver",
     "thumbImage": "images/portfolio/roger.jpg",
     "tags": "Web Design, Web Development, PHP, MySQL, Social Media",
-    "description": "Official website for artist Roger Hayden Johnson. Built on a PHP & MySQL back end. Instagram & Facebook social media marketing.",
+    "description": "Official website for artist Roger Hayden Johnson. Responsive design on a PHP & MySQL back end. Instagram & Facebook social media marketing.",
     "mainImage": "images/portfolio/modals/m-roger.jpg",
     "link": "http://www.rogerhaydenjohnson.com",
-    "featured": true,
-    "highlyFeatured": true,
-    "order": 1
+    "status": {
+      "active": true,
+      "activeOrder": 5,
+      "featured": true,
+      "featuredOrder": 5
+    }
   },
   {
-    "id": "aliens",
-    "name": "Allen's Aliens",
-    "type": "Web Development, Social Media",
-    "company": "WebEquate, Denver",
-    "thumbImage": "images/portfolio/aliens-2.jpg",
-    "tags": "Web Development, HTML, CSS, JavaScript, Social Media",
-    "description": "A social marketing campaign, including glow-in-the-dark aliens, double-sided glossy business cards, Instagram profile, Facebook page, and responsive landing page built with Next.js, React, TypeScript, and MongoDB.",
-    "mainImage": "images/portfolio/modals/m-aliens-2.jpg",
-    "details": "https://www.instagram.com/real_allens_aliens",
-    "link": "http://www.allensaliens.com",
-    "featured": true,
-    "highlyFeatured": true,
-    "order": 2
+    "id": "bras",
+    "name": "JackRabbit Sports Bra Experience",
+    "type": "Web Development & E-Commerce",
+    "company": "JackRabbit, Denver",
+    "thumbImage": "images/portfolio/bras.jpg",
+    "tags": "Web Development, E-Commerce, HTML, CSS, JavaScript, Responsive Design",
+    "description": "An enhancement to the sports bra section of the JackRabbit.com e-commerce website.",
+    "mainImage": "images/portfolio/modals/m-bras.jpg",
+    "screenshots": {
+      "path": "images/portfolio/jr/screenshot/jr-sports-bra-experience",
+      "mobile": "jackrabbit-women-apparel-sports-bras-360.png",
+      "tablet": "jackrabbit-women-apparel-sports-bras-768.png",
+      "laptop": "jackrabbit-women-apparel-sports-bras-1024.png",
+      "desktop": "jackrabbit-women-apparel-sports-bras-1280.png"
+    },
+    "status": {
+      "active": true,
+      "activeOrder": 6,
+      "featured": true,
+      "featuredOrder": 6
+    }
   },
   {
     "id": "train",
-    "name": "Train to Be Your Best",
+    "name": "JackRabbit Train to Be Your Best",
     "type": "Web Development",
     "company": "JackRabbit, Denver",
     "thumbImage": "images/portfolio/train.jpg",
@@ -45,21 +139,10 @@
       "laptop": "jackrabbit-train-to-be-your-best-1024.png",
       "desktop": "jackrabbit-train-to-be-your-best-1280.png"
     },
-    "featured": true,
-    "order": 3
-  },
-  {
-    "id": "fireman",
-    "name": "Fireman Creative",
-    "type": "Web Development",
-    "company": "Fireman Creative, Pittsburgh",
-    "thumbImage": "images/portfolio/fireman.jpg",
-    "tags": "Web Development, PHP, MySQL, HTML, CSS, JavaScript",
-    "description": "Home page and portfolio site for Fireman Creative, a creative agency where I was Senior Web Developer for two years.",
-    "mainImage": "images/portfolio/modals/m-fireman.jpg",
-    "details": "http://www.webequate.com/samplework/#fireman",
-    "featured": true,
-    "order": 4
+    "status": {
+      "active": true,
+      "activeOrder": 7
+    }
   },
   {
     "id": "anna",
@@ -72,33 +155,14 @@
     "mainImage": "images/portfolio/modals/m-anna-2.jpg",
     "details": "http://www.webequate.com/samplework/#anna",
     "link": "http://www.annaelisejohnson.com",
-    "featured": true,
-    "highlyFeatured": true,
-    "order": 5
-  },
-  {
-    "id": "jackrabbit",
-    "name": "JackRabbit Homepage",
-    "type": "Web Development",
-    "company": "JackRabbit, Denver",
-    "thumbImage": "images/portfolio/jackrabbit.jpg",
-    "tags": "Web Development, HTML, CSS, JavaScript, Responsive Design",
-    "description": "Redesign of the JackRabbit.com e-commerce website's homepage.",
-    "mainImage": "images/portfolio/modals/m-jackrabbit.jpg",
-    "link": "https://www.jackrabbit.com",
-    "screenshots": {
-      "path": "images/portfolio/jr/screenshot/jr-homepage-redesign",
-      "mobile": "jackrabbit-360.png",
-      "tablet": "jackrabbit-768.png",
-      "laptop": "jackrabbit-1024.png",
-      "desktop": "jackrabbit-1280.png"
-    },
-    "featured": true,
-    "order": 6
+    "status": {
+      "active": true,
+      "activeOrder": 8
+    }
   },
   {
     "id": "wool",
-    "name": "PS Collection Wool",
+    "name": "JackRabbit Wool Collection",
     "type": "Web Development",
     "company": "JackRabbit, Denver",
     "thumbImage": "images/portfolio/wool.jpg",
@@ -112,32 +176,14 @@
       "laptop": "jackrabbit-ps-collection-1024.png",
       "desktop": "jackrabbit-ps-collection-1280.png"
     },
-    "featured": true,
-    "order": 7
-  },
-  {
-    "id": "release",
-    "name": "Shoe Release Calendar",
-    "type": "Web Development",
-    "company": "JackRabbit, Denver",
-    "thumbImage": "images/portfolio/release.jpg",
-    "tags": "Web Development, HTML, CSS, JavaScript, Responsive Design",
-    "description": "Running shoe release calendar for JackRabbit.com, with custom CMS.",
-    "mainImage": "images/portfolio/modals/m-release.jpg",
-    "link": "https://www.jackrabbit.com/info/release-calendar",
-    "screenshots": {
-      "path": "images/portfolio/jr/screenshot/jr-release-calendar",
-      "mobile": "jackrabbit-release-calendar-360.png",
-      "tablet": "jackrabbit-release-calendar-768.png",
-      "laptop": "jackrabbit-release-calendar-1024.png",
-      "desktop": "jackrabbit-release-calendar-1280.png"
-    },
-    "featured": true,
-    "order": 8
+    "status": {
+      "active": true,
+      "activeOrder": 9
+    }
   },
   {
     "id": "nyc",
-    "name": "NYC Marathon",
+    "name": "JackRabbit NYC Marathon",
     "type": "Web Development",
     "company": "JackRabbit, Denver",
     "thumbImage": "images/portfolio/nyc.jpg",
@@ -151,12 +197,14 @@
       "laptop": "jackrabbit-big-race-nyc-2016-1024.png",
       "desktop": "jackrabbit-big-race-nyc-2016-1280.png"
     },
-    "featured": true,
-    "order": 9
+    "status": {
+      "active": true,
+      "activeOrder": 10
+    }
   },
   {
     "id": "intela",
-    "name": "Intela",
+    "name": "Intela Lead Generation",
     "type": "Web Development",
     "company": "Intela, Boulder",
     "thumbImage": "images/portfolio/intela.jpg",
@@ -164,8 +212,10 @@
     "description": "Developed landing pages for lead generation in ten international markets.",
     "mainImage": "images/portfolio/modals/m-intela.jpg",
     "details": "http://www.webequate.com/samplework/#intela",
-    "featured": true,
-    "order": 10
+    "status": {
+      "active": true,
+      "activeOrder": 11
+    }
   },
   {
     "id": "bingo",
@@ -177,26 +227,9 @@
     "description": "Developed a bingo game concurrent with two seasons of the Survivor television series, and one Dead or Alive bingo game, both backed with private game administration and statistics functionality.",
     "mainImage": "images/portfolio/modals/m-bingo.jpg",
     "details": "http://www.webequate.com/samplework/#bingo",
-    "featured": true,
-    "order": 11
-  },
-  {
-    "id": "bras",
-    "name": "Sports Bra Experience",
-    "type": "Web Development",
-    "company": "JackRabbit, Denver",
-    "thumbImage": "images/portfolio/bras.jpg",
-    "tags": "Web Development, HTML, CSS, JavaScript, Responsive Design",
-    "description": "An enhancement to the sports bra section of the JackRabbit.com e-commerce website.",
-    "mainImage": "images/portfolio/modals/m-bras.jpg",
-    "screenshots": {
-      "path": "images/portfolio/jr/screenshot/jr-sports-bra-experience",
-      "mobile": "jackrabbit-women-apparel-sports-bras-360.png",
-      "tablet": "jackrabbit-women-apparel-sports-bras-768.png",
-      "laptop": "jackrabbit-women-apparel-sports-bras-1024.png",
-      "desktop": "jackrabbit-women-apparel-sports-bras-1280.png"
-    },
-    "featured": true,
-    "order": 12
+    "status": {
+      "active": true,
+      "activeOrder": 12
+    }
   }
 ]

@@ -1,4 +1,5 @@
 // components/ContactDetails.tsx
+import Heading from "@/components/Heading";
 import DownloadCV from "@/components/DownloadCV";
 import Link from "next/link";
 import { FiUser, FiMapPin, FiPhone, FiMail, FiGlobe } from "react-icons/fi";
@@ -24,11 +25,7 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({
 }) => {
   return (
     <div className="text-base text-left text-dark-2 dark:text-light-2 mt-0 lg:mt-8">
-      <h2 className="text-2xl font-bold mb-6">
-        <span className="text-accent-dark dark:text-accent-light">
-          Contact Details
-        </span>
-      </h2>
+      <Heading text="Contact Details" />
       {contactIntro && <p className="text-base mb-4">{contactIntro}</p>}
       <ul className="mb-6">
         {name && (

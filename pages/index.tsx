@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import DownloadCV from "@/components/DownloadCV";
 import Social from "@/components/Social";
 import ThemedImage from "@/components/ThemedImage";
+import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
 
@@ -82,11 +83,7 @@ const HomePage: NextPage<HomePageProps> = ({
           </div>
         </div>
         <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2">
-          <h2 className="text-2xl font-bold mb-6">
-            <span className="text-accent-dark dark:text-accent-light">
-              Featured Projects
-            </span>
-          </h2>
+          <Heading text="Featured Projects" />
           <ProjectGrid projects={projects} path="featured" />
         </div>
       </motion.div>
@@ -102,8 +99,8 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
 
   const projectsCollection = db.collection<Project>("projects");
   const projects: Project[] = await projectsCollection
-    .find({ highlyFeatured: true })
-    .sort({ order: 1 })
+    .find({ "status.featured": true })
+    .sort({ "status.featuredOrder": 1 })
     .toArray();
 
   return {
