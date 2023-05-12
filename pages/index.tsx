@@ -1,12 +1,15 @@
 // pages/index.tsx
+import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import { motion } from "framer-motion";
+import { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import DownloadCV from "@/components/DownloadCV";
 import Social from "@/components/Social";
 import ThemedImage from "@/components/ThemedImage";
+import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
 
 type HomePageProps = {
@@ -15,6 +18,7 @@ type HomePageProps = {
   summaryItems: string[];
   resumeLink: string;
   socialLinks: SocialLink[];
+  projects: Project[];
 };
 
 const HomePage: NextPage<HomePageProps> = ({
@@ -23,6 +27,7 @@ const HomePage: NextPage<HomePageProps> = ({
   summaryItems,
   resumeLink,
   socialLinks,
+  projects,
 }) => {
   return (
     <div className="mx-auto">
@@ -33,7 +38,7 @@ const HomePage: NextPage<HomePageProps> = ({
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
-        <div className="flex flex-col-reverse lg:flex-row">
+        <div className="flex flex-col-reverse lg:flex-row mb-8">
           <div className="w-full lg:w-1/2 mb-10 lg:mb-0 md:mr-6">
             <h1 className="text-4xl sm:text-5xl font-bold text-dark-1 dark:text-light-1 mb-4 uppercase">
               {name}
@@ -76,6 +81,14 @@ const HomePage: NextPage<HomePageProps> = ({
             </motion.div>
           </div>
         </div>
+        <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2">
+          <h2 className="text-2xl font-bold mb-6">
+            <span className="text-accent-dark dark:text-accent-light">
+              Featured Projects
+            </span>
+          </h2>
+          <ProjectGrid projects={projects} />
+        </div>
       </motion.div>
 
       <Footer name={name} />
@@ -84,6 +97,15 @@ const HomePage: NextPage<HomePageProps> = ({
 };
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const client = await clientPromise;
+  const db = client.db("Portfolio");
+
+  const projectsCollection = db.collection<Project>("projects");
+  const projects: Project[] = await projectsCollection
+    .find({ highlyFeatured: true })
+    .sort({ order: 1 })
+    .toArray();
+
   return {
     props: {
       name: basics.name,
@@ -91,6 +113,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       summaryItems: basics.summaryItems,
       resumeLink: basics.resumeLink,
       socialLinks: basics.socialLinks,
+      projects: JSON.parse(JSON.stringify(projects)),
     },
     revalidate: 60,
   };

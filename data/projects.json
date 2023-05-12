@@ -10,6 +10,7 @@
     "mainImage": "images/portfolio/modals/m-roger.jpg",
     "link": "http://www.rogerhaydenjohnson.com",
     "featured": true,
+    "highlyFeatured": true,
     "order": 1
   },
   {
@@ -17,13 +18,14 @@
     "name": "Allen's Aliens",
     "type": "Web Development, Social Media",
     "company": "WebEquate, Denver",
-    "thumbImage": "images/portfolio/aliens.jpg",
+    "thumbImage": "images/portfolio/aliens-2.jpg",
     "tags": "Web Development, HTML, CSS, JavaScript, Social Media",
-    "description": "A social marketing campaign, including glow-in-the-dark aliens, double-sided glossy business cards, Instagram profile, Facebook page, and responsive landing page.",
-    "mainImage": "images/portfolio/modals/m-aliens.jpg",
+    "description": "A social marketing campaign, including glow-in-the-dark aliens, double-sided glossy business cards, Instagram profile, Facebook page, and responsive landing page built with Next.js, React, TypeScript, and MongoDB.",
+    "mainImage": "images/portfolio/modals/m-aliens-2.jpg",
     "details": "https://www.instagram.com/real_allens_aliens",
     "link": "http://www.allensaliens.com",
     "featured": true,
+    "highlyFeatured": true,
     "order": 2
   },
   {
@@ -64,13 +66,14 @@
     "name": "Anna Elise Johnson",
     "type": "Web Design & Development",
     "company": "WebEquate, Denver",
-    "thumbImage": "images/portfolio/anna.jpg",
+    "thumbImage": "images/portfolio/anna-2.jpg",
     "tags": "Web Design, Web Development, HTML, CSS, Responsive Design",
-    "description": "Responsive web design and development for the official artist website of Anna Elise Johnson.",
-    "mainImage": "images/portfolio/modals/m-anna.jpg",
+    "description": "A responsive web site for artist Anna Elise Johnson, built with Next.js, React, TypeScript, and MongoDB.",
+    "mainImage": "images/portfolio/modals/m-anna-2.jpg",
     "details": "http://www.webequate.com/samplework/#anna",
     "link": "http://www.annaelisejohnson.com",
     "featured": true,
+    "highlyFeatured": true,
     "order": 5
   },
   {
