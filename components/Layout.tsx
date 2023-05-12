@@ -21,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "Portfolio", children }) => {
         <title>{title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/allen.png" />
       </Head>
       <main className="min-h-screen bg-white dark:bg-neutral-900 sm:border-x border-dark-3 dark:border-light-3 px-4 sm:px-8 lg:px-16">
         <div className="bg-white dark:bg-neutral-900">{children}</div>
