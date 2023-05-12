@@ -21,5 +21,6 @@ export type Project = {
   link?: string;
   screenshots?: Screenshots;
   featured?: boolean;
+  highlyFeatured?: boolean;
   order: number;
 };

@@ -30,7 +30,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className="text-base text-dark-2 dark:text-light-2"
       >
-        <ProjectGrid projects={projects} />
+        <ProjectGrid projects={projects} path="projects" />
       </motion.div>
 
       <Footer name={name} />

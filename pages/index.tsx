@@ -87,7 +87,7 @@ const HomePage: NextPage<HomePageProps> = ({
               Featured Projects
             </span>
           </h2>
-          <ProjectGrid projects={projects} />
+          <ProjectGrid projects={projects} path="featured" />
         </div>
       </motion.div>
 
