@@ -6,7 +6,7 @@ export type School = {
   city: string;
   endDate: string;
   order: number;
-}
+};
 
 export type Job = {
   _id: string;
@@ -17,4 +17,4 @@ export type Job = {
   endDate: string;
   achievements: string[];
   order: number;
-}
+};

@@ -128,10 +128,16 @@ export const getStaticProps: GetStaticProps<ResumePageProps> = async () => {
   const db = client.db("Portfolio");
 
   const schoolsCollection = db.collection<School>("schools");
-  const schools: School[] = await schoolsCollection.find({}).toArray();
+  const schools: School[] = await schoolsCollection
+    .find({})
+    .sort({ order: -1 })
+    .toArray();
 
   const jobsCollection = db.collection<Job>("jobs");
-  const jobs: Job[] = await jobsCollection.find({}).toArray();
+  const jobs: Job[] = await jobsCollection
+    .find({})
+    .sort({ order: -1 })
+    .toArray();
 
   return {
     props: {
