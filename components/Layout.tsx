@@ -38,6 +38,8 @@ const Layout: React.FC<LayoutProps> = ({
           property="og:image"
           content="https://portfolio.webequate.com/images/portfolio-og.jpg"
         />
+        <meta property="og:url" content="https://portfolio.webequate.com" />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="/allen.png" />
       </Head>
       <main className="min-h-screen bg-white dark:bg-neutral-900 sm:border-x border-dark-3 dark:border-light-3 px-4 sm:px-8 lg:px-16">
