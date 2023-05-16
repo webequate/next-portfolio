@@ -36,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({
         />
         <meta
           property="og:image"
-          content="https://portfolio.webequate.com/images/allen-johnson-portfolio.jpg"
+          content="https://portfolio.webequate.com/images/portfolio-og.jpg"
         />
         <link rel="icon" href="/allen.png" />
       </Head>
