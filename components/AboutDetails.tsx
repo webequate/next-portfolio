@@ -1,5 +1,4 @@
 // components/AboutDetails.tsx
-import ContactDetails from "@/components/ContactDetails";
 import Image from "next/image";
 
 interface AboutDetailsProps {
@@ -20,16 +19,11 @@ const AboutDetails: React.FC<AboutDetailsProps> = ({
       <Image
         src="/images/allen-ai.jpg"
         alt="Allen"
-        width={600}
-        height={625}
+        width={574}
+        height={718}
+        priority
         className="w-100 h-100 rounded-xl ring-1 ring-dark-3 dark:ring-light-3 md:mr-4"
       />
-      {/* <ContactDetails
-        name={name}
-        location={location}
-        phone={phone}
-        website={website}
-      /> */}
     </div>
   );
 };
