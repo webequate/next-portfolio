@@ -45,8 +45,9 @@ const Project = ({
           <Image
             src={`/${project.mainImage}`}
             alt={project.name}
-            width={1080}
-            height={600}
+            width={1022}
+            height={662}
+            priority
             className="mx-auto ring-1 ring-dark-3 dark:ring-light-3 mb-8"
           />
           <ProjectFooter

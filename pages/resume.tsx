@@ -40,11 +40,11 @@ const ResumePage: NextPage<ResumePageProps> = ({
             </h1>
             <div className="mb-4">
               {titles.map((title, index) => (
-                <h3 key={index} className="text-2xl md:text-3xl font-bold">
+                <h2 key={index} className="text-2xl md:text-3xl font-bold">
                   <span className="text-gradient-dark dark:text-gradient-light">
                     {title}
                   </span>
-                </h3>
+                </h2>
               ))}
             </div>
           </div>
@@ -52,9 +52,9 @@ const ResumePage: NextPage<ResumePageProps> = ({
 
         <div className="lg:flex lg:flex-row mx-auto align-top">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
+            <h3 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
               Education
-            </h2>
+            </h3>
           </div>
           <div className="w-full lg:w-2/3">
             {schools.map((school, index) => (
@@ -62,9 +62,9 @@ const ResumePage: NextPage<ResumePageProps> = ({
                 key={index}
                 className="text-base text-dark-2 dark:text-light-2 mb-5"
               >
-                <h3 className="text-2xl font-bold text-dark-1 dark:text-light-1 mb-1">
+                <h2 className="text-2xl font-bold text-dark-1 dark:text-light-1 mb-1">
                   {school.school}
-                </h3>
+                </h2>
                 <p className="text-gradient-dark dark:text-gradient-light text-xl font-bold mb-1">
                   <span className="text-gradient-dark dark:text-gradient-light">
                     {school.program}
@@ -81,9 +81,9 @@ const ResumePage: NextPage<ResumePageProps> = ({
 
         <div className="lg:flex lg:flex-row mx-auto my-12 align-top">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
+            <h3 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
               Work Experience
-            </h2>
+            </h3>
           </div>
           <div className="w-full lg:w-2/3">
             {jobs.map((job, index) => (
@@ -91,9 +91,9 @@ const ResumePage: NextPage<ResumePageProps> = ({
                 key={index}
                 className="text-base text-dark-2 dark:text-light-2 mb-10"
               >
-                <h3 className="text-2xl font-bold text-dark-1 dark:text-light-1 mb-1">
+                <h2 className="text-2xl font-bold text-dark-1 dark:text-light-1 mb-1">
                   {job.company}
-                </h3>
+                </h2>
                 <p className="text-gradient-dark dark:text-gradient-light text-xl font-bold mb-1">
                   <span className="text-gradient-dark dark:text-gradient-light">
                     {job.role}
