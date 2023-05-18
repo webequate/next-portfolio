@@ -23,7 +23,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
           title="Previous Project"
           aria-label="Previous Project"
         >
-          <FaArrowLeft className="hover:text-accent-dark dark:hover:text-accent-light" />
+          <FaArrowLeft className="sm:hover:text-accent-dark sm:dark:hover:text-accent-light" />
         </Link>
       ) : (
         <div className="invisible">
@@ -39,7 +39,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
           title="Next Project"
           aria-label="Next Project"
         >
-          <FaArrowRight className="hover:text-accent-dark dark:hover:text-accent-light" />
+          <FaArrowRight className="sm:hover:text-accent-dark sm:dark:hover:text-accent-light" />
         </Link>
       ) : (
         <div className="invisible">
