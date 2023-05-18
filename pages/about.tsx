@@ -38,14 +38,10 @@ const AboutPage: NextPage<AboutPageProps> = ({
       >
         <div className="flex flex-col lg:flex-row-reverse text-base text-dark-2 dark:text-light-2">
           <div className="w-full lg:w-1/2 mb-2 lg:mb-0 md:ml-6">
-            <AboutContent
-              aboutIntro={aboutIntro}
-              aboutItems={aboutItems}
-              socialLinks={socialLinks}
-            />
+            <AboutContent aboutIntro={aboutIntro} aboutItems={aboutItems} />
           </div>
 
-          <div className="w-full lg:w-1/2 mb-10 lg:mb-0 md:mr-6">
+          <div className="w-full lg:w-1/2 mb-2 lg:mb-0 md:mr-6">
             <AboutDetails
               name={name}
               location={location}
@@ -55,7 +51,7 @@ const AboutPage: NextPage<AboutPageProps> = ({
           </div>
         </div>
 
-        <Footer name={name} />
+        <Footer name={name} socialLinks={socialLinks} />
       </motion.div>
     </div>
   );

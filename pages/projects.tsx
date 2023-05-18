@@ -34,7 +34,8 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({
         <Heading text="Projects" />
         <ProjectGrid projects={projects} path="projects" />
       </motion.div>
-      <Footer name={name} />
+
+      <Footer name={name} socialLinks={socialLinks} />
     </div>
   );
 };

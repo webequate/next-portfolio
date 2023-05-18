@@ -118,7 +118,7 @@ const ResumePage: NextPage<ResumePageProps> = ({
         </div>
       </motion.div>
 
-      <Footer name={name} />
+      <Footer name={name} socialLinks={socialLinks} />
     </>
   );
 };

@@ -1,18 +1,22 @@
 // components/Footer.tsx
+import { SocialLink } from "@/types/basics";
+import Social from "@/components/Social";
 import Copyright from "@/components/Copyright";
+import WebEquate from "@/components/WebEquate";
 import Link from "next/link";
 
 interface FooterProps {
   name: string;
+  socialLinks: SocialLink[];
 }
 
-const Footer: React.FC<FooterProps> = ({ name }) => {
+const Footer: React.FC<FooterProps> = ({ name, socialLinks }) => {
   return (
     <div className="mx-auto">
-      <div className="mt-8 pb-8 border-t-2 border-light-1 dark:border-dark-2">
+      <div className="pb-8 mt-4 border-t-2 border-light-1 dark:border-dark-2">
         <div>
           {/* Footer links - large screen */}
-          <div className="mt-8 hidden sm:flex justify-center items-center">
+          <div className="m-0 mt-8 hidden sm:flex sm:p-0 justify-center items-center">
             <div className="nav-secondary">
               <Link href="/" aria-label="Home">
                 Home
@@ -34,8 +38,14 @@ const Footer: React.FC<FooterProps> = ({ name }) => {
               </Link>
             </div>
           </div>
+          <div className="mx-auto mt-6">
+            <Social socialLinks={socialLinks} />
+          </div>
           <div className="flex justify-center">
             <Copyright name={name} />
+          </div>
+          <div className="flex justify-center">
+            <WebEquate />
           </div>
         </div>
       </div>

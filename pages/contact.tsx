@@ -54,7 +54,7 @@ const ContactPage: NextPage<ContactPageProps> = ({
         </div>
       </motion.div>
 
-      <Footer name={name} />
+      <Footer name={name} socialLinks={socialLinks} />
     </div>
   );
 };

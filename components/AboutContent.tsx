@@ -1,17 +1,13 @@
 // components/AboutContent.tsx
-import Social from "@/components/Social";
-import { SocialLink } from "@/types/basics";
 
 interface AboutContentProps {
   aboutIntro: string;
   aboutItems: string[];
-  socialLinks: SocialLink[];
 }
 
 const AboutContent: React.FC<AboutContentProps> = ({
   aboutIntro,
   aboutItems,
-  socialLinks,
 }) => {
   return (
     <div className="text-dark-2 dark:text-light-2">
@@ -26,9 +22,6 @@ const AboutContent: React.FC<AboutContentProps> = ({
             {aboutItem}
           </p>
         ))}
-      </div>
-      <div className="mb-6">
-        <Social socialLinks={socialLinks} />
       </div>
     </div>
   );

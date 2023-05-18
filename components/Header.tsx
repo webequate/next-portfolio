@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ socialLink }) => {
 
   return (
     <nav>
-      <div className="container mx-auto px-0 pt-5 pb-5 md:pb-10">
+      <div className="container mx-auto px-0 pt-4 pb-8 md:pb-10">
         <div className="flex justify-center items-center">
           {/* Home link */}
           <div className="flex mr-auto">

@@ -21,7 +21,7 @@ const ProjectFooter: React.FC<ProjectFooterProps> = ({
   desktop,
 }) => {
   return (
-    <div className="text-center items-center mx-auto">
+    <div className="text-base text-center items-center mx-auto">
       <p className="mb-4 md:mb-6">{description}</p>
       <p className="mb-4 md:mb-6">Tags: {tags}</p>
       {path && (

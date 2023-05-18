@@ -46,7 +46,7 @@ const SkillsPage: NextPage<SkillsPageProps> = ({
         </div>
       </motion.div>
 
-      <Footer name={name} />
+      <Footer name={name} socialLinks={socialLinks} />
     </div>
   );
 };

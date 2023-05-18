@@ -24,7 +24,7 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({
   resumeLink,
 }) => {
   return (
-    <div className="text-base text-left text-dark-2 dark:text-light-2 mt-0 lg:mt-8">
+    <div className="text-base text-left text-dark-2 dark:text-light-2 mt-0 lg:mt-8 ml-6 lg:ml-0">
       <Heading text="Contact Details" />
       {contactIntro && <p className="text-base mb-4">{contactIntro}</p>}
       <ul className="mb-6">

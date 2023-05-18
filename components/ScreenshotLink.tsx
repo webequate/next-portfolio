@@ -28,10 +28,10 @@ const ScreenshotLink: React.FC<ScreenshotLinkProps> = ({ name, path, url }) => {
     <Link
       href={`/${path}/${url}`}
       target="_blank"
-      className="flex mr-2 md:mr-6"
+      className="flex justify-between mx-2 md:mx-4"
     >
-      <i className="text-lg mr-1 mt-1">{iconFromName(name)}</i>
-      <span className="text-lg">{name}</span>
+      <i className="mr-1 mt-1">{iconFromName(name)}</i>
+      <span>{name}</span>
     </Link>
   );
 };

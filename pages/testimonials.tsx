@@ -43,7 +43,7 @@ const TestimonialsPage: NextPage<TestimonialsPageProps> = ({
         </ul>
       </motion.div>
 
-      <Footer name={name} />
+      <Footer name={name} socialLinks={socialLinks} />
     </div>
   );
 };

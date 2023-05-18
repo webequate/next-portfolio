@@ -39,7 +39,7 @@ const HomePage: NextPage<HomePageProps> = ({
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
-        <div className="flex flex-col-reverse lg:flex-row mb-8">
+        <div className="flex flex-col-reverse lg:flex-row">
           <div className="w-full lg:w-1/2 mb-10 lg:mb-0 md:mr-6">
             <h1 className="text-4xl sm:text-5xl font-bold text-dark-1 dark:text-light-1 mb-4 uppercase">
               {name}
@@ -53,7 +53,7 @@ const HomePage: NextPage<HomePageProps> = ({
                 </h2>
               ))}
             </div>
-            <div className="mb-6">
+            <div className="mb-4">
               {summaryItems.map((summaryItem, index) => (
                 <p
                   key={index}
@@ -63,10 +63,10 @@ const HomePage: NextPage<HomePageProps> = ({
                 </p>
               ))}
             </div>
-            <div className="mb-6">
+            <div className="flex justify-left mb-4">
               <Social socialLinks={socialLinks} />
             </div>
-            <div className="mb-6">
+            <div>
               <DownloadCV resumelink={resumeLink} />
             </div>
           </div>
@@ -82,13 +82,13 @@ const HomePage: NextPage<HomePageProps> = ({
             </motion.div>
           </div>
         </div>
-        <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2">
+        <div className="pt-8 border-t-2 border-light-1 dark:border-dark-2 mb-8">
           <Heading text="Featured Projects" />
           <ProjectGrid projects={projects} path="featured" />
         </div>
       </motion.div>
 
-      <Footer name={name} />
+      <Footer name={name} socialLinks={socialLinks} />
     </div>
   );
 };

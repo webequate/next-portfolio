@@ -12,7 +12,7 @@ import ProjectFooter from "@/components/ProjectFooter";
 import Footer from "@/components/Footer";
 import { useRouter } from "next/router";
 import { useSwipeable } from "react-swipeable";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ProjectProps {
   name: string;
@@ -85,7 +85,7 @@ const Project = ({
             width={1022}
             height={662}
             priority
-            className="mx-auto ring-1 ring-dark-3 dark:ring-light-3 mb-8"
+            className="mx-auto ring-1 ring-dark-3 dark:ring-light-3 mb-4"
           />
           <ProjectFooter
             description={project.description}
@@ -99,7 +99,7 @@ const Project = ({
         </div>
       </motion.div>
 
-      <Footer name={name} />
+      <Footer name={name} socialLinks={socialLinks} />
     </div>
   );
 };
