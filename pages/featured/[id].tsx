@@ -1,4 +1,4 @@
-// pages/projects/[id].tsx
+// pages/featured/[id].tsx
 import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { motion } from "framer-motion";
@@ -90,6 +90,8 @@ const Project = ({
           <ProjectFooter
             description={project.description}
             tags={project.tags}
+            details={project.details}
+            link={project.link}
             path={project.screenshots?.path}
             mobile={project.screenshots?.mobile}
             tablet={project.screenshots?.tablet}
