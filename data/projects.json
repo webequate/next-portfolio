@@ -14,7 +14,11 @@
       "active": true,
       "activeOrder": 1,
       "featured": true,
-      "featuredOrder": 1
+      "featuredOrder": 1,
+      "webequate": true,
+      "webequateOrder": 1,
+      "webequateFeatured": true,
+      "webequateFeaturedOrder": 1
     }
   },
   {
@@ -38,7 +42,9 @@
       "active": true,
       "activeOrder": 2,
       "featured": true,
-      "featuredOrder": 2
+      "featuredOrder": 2,
+      "webequate": true,
+      "webequateOrder": 2
     }
   },
   {
@@ -79,7 +85,9 @@
       "active": true,
       "activeOrder": 4,
       "featured": true,
-      "featuredOrder": 4
+      "featuredOrder": 4,
+      "webequate": true,
+      "webequateOrder": 4
     }
   },
   {
@@ -96,7 +104,11 @@
       "active": true,
       "activeOrder": 5,
       "featured": true,
-      "featuredOrder": 5
+      "featuredOrder": 5,
+      "webequate": true,
+      "webequateOrder": 5,
+      "webequateFeatured": true,
+      "webequateFeaturedOrder": 3
     }
   },
   {
@@ -119,7 +131,9 @@
       "active": true,
       "activeOrder": 6,
       "featured": true,
-      "featuredOrder": 6
+      "featuredOrder": 6,
+      "webequate": true,
+      "webequateOrder": 6
     }
   },
   {
@@ -157,7 +171,11 @@
     "link": "http://www.annaelisejohnson.com",
     "status": {
       "active": true,
-      "activeOrder": 8
+      "activeOrder": 8,
+      "webequate": true,
+      "webequateOrder": 3,
+      "webequateFeatured": true,
+      "webequateFeaturedOrder": 2
     }
   },
   {
