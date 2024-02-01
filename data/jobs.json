@@ -6,7 +6,7 @@
     "startDate": "Aug 2022",
     "endDate": "Present",
     "achievements": [
-      "Rebuilding websites previously built with PHP, MySQL, and Bootstrap, instead using Next.js, React, JavaScript / TypeScript, MongoDB, Tailwind, and Vercel, to modernize development workflow, streamline site updates, and enhance site speed."
+      "Rebuilt websites using Next.js, React, JavaScript / TypeScript, MongoDB, Tailwind, and Vercel, to modernize development workflow, streamline site updates, and enhance site speed."
     ],
     "order": 17
   },
@@ -32,7 +32,7 @@
     "achievements": [
       "Developed in JavaScript, primarily using React and Redux, for OnTech Smart Services, an e-commerce site focused on selling smart home devices and expert installation.",
       "Developed user interface features, both customer-facing and internal, often integrating with back end RESTful APIs, on a cross-functional, full stack Scrum team.",
-      "Improved Where’s My Tech, a Shopify app with a Ruby on Rails codebase, using corporate APIs to dynamically update a map showing technician location, van direction, and route details."
+      "Improved Where's My Tech, a Shopify app with a Ruby on Rails codebase, using corporate APIs to dynamically update a map showing technician location, van direction, and route details."
     ],
     "order": 15
   },
@@ -44,7 +44,7 @@
     "endDate": "July 2021",
     "achievements": [
       "Developed, maintain, and update RogerHaydenJohnson.com, the official artist website, using PHP 7 and MySQL, upgraded with a mobile first responsive design.",
-      "Built the Allen’s Aliens social media marketing campaign, incorporating swag giveaways at events, glossy double-sided business cards, Instagram profile, Facebook page, and a responsive website."
+      "Built the Allen's Aliens social media marketing campaign, incorporating swag giveaways at events, glossy double-sided business cards, Instagram profile, Facebook page, and a responsive website."
     ],
     "order": 14
   },
@@ -101,7 +101,7 @@
     "startDate": "Dec 2012",
     "endDate": "May 2013",
     "achievements": [
-      "Front end development for Experian’s UK credit monitoring and identity theft protection sites."
+      "Front end development for Experian's UK credit monitoring and identity theft protection sites."
     ],
     "order": 9
   },
@@ -136,7 +136,7 @@
     "startDate": "May 2009",
     "endDate": "Dec 2009",
     "achievements": [
-      "Modified Highmark’s health insurance websites to meet Section 508 accessibility standards.",
+      "Modified Highmark's health insurance websites to meet Section 508 accessibility standards.",
       "Overhauled HTML, CSS, and JavaScript to better separate content, presentation, and behavior."
     ],
     "order": 6
