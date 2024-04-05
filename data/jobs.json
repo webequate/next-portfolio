@@ -6,7 +6,7 @@
     "startDate": "Aug 2022",
     "endDate": "Present",
     "achievements": [
-      "Rebuilt websites using Next.js, React, JavaScript / TypeScript, MongoDB, Tailwind, and Vercel, to modernize development workflow, streamline site updates, and enhance site speed."
+      "Built new websites and re-built existing portfolio of websites using Next.js, React, TypeScript, MongoDB, Tailwind CSS, and Vercel, to modernize development workflow, streamline site updates, and enhance site speed."
     ],
     "order": 17
   },
@@ -17,9 +17,9 @@
     "startDate": "July 2021",
     "endDate": "July 2022",
     "achievements": [
-      "Provided and maintained tools, infrastructure, and documentation to enable Etsy product teams to use modern front end development practices.",
-      "Supported Mobius, a framework which allows development of interactive server side rendered (SSR) React component islands, able to inter-communicate once hydrated using a shared Redux store (Redux Toolkit), while still maintaining site speed for shoppers and search engines.",
-      "Participated in replacement of Underscore library with native JavaScript / TypeScript, and in transition from Smarty templates to Mustache, in the interest of a more consistent developer experience and improved site performance."
+      "Provided and maintained tools, infrastructure, and documentation to enable Etsy product teams to leverage modern front end development practices.",
+      "Supported Mobius, a framework for development of interactive server-rendered React component islands, able to inter-communicate once hydrated using a shared Redux store, while still maintaining site speed for shoppers and search engines.",
+      "Participated in replacement of Underscore library with native JavaScript / TypeScript, to provide a more consistent developer experience and to improve site performance."
     ],
     "order": 16
   },
@@ -32,7 +32,7 @@
     "achievements": [
       "Developed in JavaScript, primarily using React and Redux, for OnTech Smart Services, an e-commerce site focused on selling smart home devices and expert installation.",
       "Developed user interface features, both customer-facing and internal, often integrating with back end RESTful APIs, on a cross-functional, full stack Scrum team.",
-      "Improved Where's My Tech, a Shopify app with a Ruby on Rails codebase, using corporate APIs to dynamically update a map showing technician location, van direction, and route details."
+      "Improved Where’s My Tech, a Shopify app with a Ruby on Rails and JavaScript codebase, using corporate APIs to dynamically update a map showing technician location, van direction, and route details."
     ],
     "order": 15
   },
@@ -43,8 +43,8 @@
     "startDate": "Mar 2018",
     "endDate": "July 2021",
     "achievements": [
-      "Developed, maintain, and update RogerHaydenJohnson.com, the official artist website, using PHP 7 and MySQL, upgraded with a mobile first responsive design.",
-      "Built the Allen's Aliens social media marketing campaign, incorporating swag giveaways at events, glossy double-sided business cards, Instagram profile, Facebook page, and a responsive website."
+      "Developed, maintained, and updated RogerHaydenJohnson.com, the official artist website, using PHP and MySQL, upgraded with a mobile first responsive design.",
+      "Built the Allen’s Aliens social media marketing campaign, incorporating swag giveaways at events, lead-generating business cards, an Instagram profile, a Facebook page, and a fully responsive website."
     ],
     "order": 14
   },
@@ -68,7 +68,7 @@
     "startDate": "Jan 2015",
     "endDate": "Mar 2015",
     "achievements": [
-      "Early design and development of a web application built with AngularJS for equipment tracking on tablet and desktop."
+      "Initiated design and AngularJS implementation of a web application for equipment tracking on tablet and desktop."
     ],
     "order": 12
   },
@@ -101,7 +101,7 @@
     "startDate": "Dec 2012",
     "endDate": "May 2013",
     "achievements": [
-      "Front end development for Experian's UK credit monitoring and identity theft protection sites."
+      "Performed front end development for Experian’s UK credit monitoring and identity theft protection sites."
     ],
     "order": 9
   },
