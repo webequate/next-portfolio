@@ -4,31 +4,31 @@
     "order": 1
   },
   {
-    "description": "React / Next.js",
+    "description": "React / Redux",
     "order": 2
   },
   {
-    "description": "Redux / Redux Toolkit",
+    "description": "HTML / CSS / Sass",
     "order": 3
   },
   {
-    "description": "HTML",
+    "description": "Next.js / Vercel",
     "order": 4
   },
   {
-    "description": "CSS / Sass",
+    "description": "Git / GitHub",
     "order": 5
   },
   {
-    "description": "AngularJS",
+    "description": "MySQL / MongoDB",
     "order": 6
   },
   {
-    "description": "Agile / Scrum",
+    "description": "Bootstrap / Tailwind CSS",
     "order": 7
   },
   {
-    "description": "Git / GitHub",
+    "description": "Agile / Scrum",
     "order": 8
   },
   {
@@ -36,11 +36,11 @@
     "order": 9
   },
   {
-    "description": "RESTful API",
+    "description": "PHP / Java / Ruby on Rails",
     "order": 10
   },
   {
-    "description": "PHP / MySQL",
+    "description": "RESTful API",
     "order": 11
   },
   {
@@ -66,5 +66,9 @@
   {
     "description": "Adobe Photoshop",
     "order": 17
+  },
+  {
+    "description": "Stable Diffusion",
+    "order": 18
   }
 ]
