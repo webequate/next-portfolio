@@ -1,6 +1,7 @@
 // pages/resume.tsx
 import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { School, Job } from "@/types/experience";
 import { SocialLink } from "@/types/basics";
@@ -25,6 +26,16 @@ const ResumePage: NextPage<ResumePageProps> = ({
 }) => {
   return (
     <>
+      <Head>
+        <title>{`${name} | Resume`}</title>
+        <meta
+          name="description"
+          content="Allen Johnson's professional experience."
+          key="desc"
+        />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
       <Header socialLink={socialLinks[0]} />
 
       <motion.div

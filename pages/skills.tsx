@@ -1,6 +1,7 @@
 // pages/skills.tsx
 import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { FeaturedSkill, RatedSkill } from "@/types/skills";
 import { SocialLink } from "@/types/basics";
@@ -25,6 +26,16 @@ const SkillsPage: NextPage<SkillsPageProps> = ({
 }) => {
   return (
     <div className="mx-auto">
+      <Head>
+        <title>{`${name} | Skills`}</title>
+        <meta
+          name="description"
+          content="Allen Johnson's technical skills."
+          key="desc"
+        />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
       <Header socialLink={socialLinks[0]} />
 
       <motion.div

@@ -29,17 +29,27 @@ const Layout: React.FC<LayoutProps> = ({
           content="Allen Johnson's portfolio. A place to showcase my experience as a front end software engineer and full stack web developer."
           key="desc"
         />
-        <meta property="og:title" content="Allen Johnson's Portfolio" />
+        <meta
+          property="og:title"
+          content="Allen Johnson's Portfolio"
+          key="ogtitle"
+        />
         <meta
           property="og:description"
           content="Allen Johnson's portfolio. A place to showcase my experience as a front end software engineer and full stack web developer."
+          key="ogdesc"
         />
         <meta
           property="og:image"
           content="https://portfolio.webequate.com/images/portfolio-og.jpg"
+          key="ogimage"
         />
-        <meta property="og:url" content="https://portfolio.webequate.com" />
-        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://portfolio.webequate.com"
+          key="ogurl"
+        />
+        <meta property="og:type" content="website" key="ogtype" />
         <link rel="icon" href="/allen.png" />
       </Head>
       <main className="min-h-screen bg-white dark:bg-neutral-900 sm:border-x border-dark-3 dark:border-light-3 px-4 sm:px-8 lg:px-16">

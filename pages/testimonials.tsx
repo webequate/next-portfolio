@@ -1,6 +1,7 @@
 // pages/testimonials.tsx
 import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { Testimonial } from "@/types/testimonial";
 import { SocialLink } from "@/types/basics";
@@ -21,6 +22,16 @@ const TestimonialsPage: NextPage<TestimonialsPageProps> = ({
 }) => {
   return (
     <div className="mx-auto">
+      <Head>
+        <title>{`${name} | Testimonials`}</title>
+        <meta
+          name="description"
+          content="Testimonials about Allen Johnson."
+          key="desc"
+        />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
       <Header socialLink={socialLinks[0]} />
 
       <motion.div

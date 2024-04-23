@@ -1,5 +1,6 @@
 // pages/contact.tsx
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
@@ -29,6 +30,12 @@ const ContactPage: NextPage<ContactPageProps> = ({
 }) => {
   return (
     <div className="mx-auto">
+      <Head>
+        <title>{`${name} | Contact`}</title>
+        <meta name="description" content="Contact Allen Johnson." key="desc" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
       <Header socialLink={socialLinks[0]} />
 
       <motion.div
