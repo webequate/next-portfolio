@@ -1,11 +1,11 @@
 // pages/featured/[id].tsx
-import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import type { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
+import projectsData from "@/data/projects.json";
 import Header from "@/components/Header";
 import ProjectHeader from "@/components/ProjectHeader";
 import Image from "next/image";
@@ -41,7 +41,7 @@ const Project = ({
     window.addEventListener("resize", checkMobile);
     checkMobile();
 
-    //Cleanup
+    // Cleanup
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
@@ -49,13 +49,13 @@ const Project = ({
     onSwipedLeft: () => {
       if (!nextProject) return;
       if (isMobile) {
-        router.push(`/featured/${nextProject?.id}`);
+        router.push(`/featured/${nextProject.id}`);
       }
     },
     onSwipedRight: () => {
       if (!prevProject) return;
       if (isMobile) {
-        router.push(`/featured/${prevProject?.id}`);
+        router.push(`/featured/${prevProject.id}`);
       }
     },
     preventScrollOnSwipe: true,
@@ -118,14 +118,9 @@ const Project = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
-
-  const projectsCollection = db.collection<Project>("projects");
-  const projects: Project[] = await projectsCollection
-    .find({ "status.featured": true })
-    .sort({ "status.featuredOrder": 1 })
-    .toArray();
+  const projects = projectsData.filter(
+    (project: Project) => project.status?.featured
+  );
 
   const paths = projects.map((project) => ({
     params: { id: project.id },
@@ -141,14 +136,11 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async ({
     return { notFound: true };
   }
 
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
-
-  const projectsCollection = db.collection<Project>("projects");
-  const projects: Project[] = await projectsCollection
-    .find({ "status.featured": true })
-    .sort({ "status.featuredOrder": 1 })
-    .toArray();
+  const projects = projectsData
+    .filter((project: Project) => project.status?.featured)
+    .sort(
+      (a, b) => (a.status.featuredOrder ?? 0) - (b.status.featuredOrder ?? 0)
+    );
 
   const projectIndex = projects.findIndex((p) => p.id === params.id);
   const project = projects[projectIndex];
@@ -164,9 +156,9 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async ({
     props: {
       name: basics.name,
       socialLinks: basics.socialLinks,
-      project: JSON.parse(JSON.stringify(project)),
-      prevProject: prevProject ? JSON.parse(JSON.stringify(prevProject)) : null,
-      nextProject: nextProject ? JSON.parse(JSON.stringify(nextProject)) : null,
+      project,
+      prevProject,
+      nextProject,
     },
     revalidate: 60,
   };

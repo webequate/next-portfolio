@@ -6,7 +6,6 @@ export type SocialLink = {
 };
 
 export type Basics = {
-  _id: string;
   name: string;
   titles: string[];
   summaryItems: string[];

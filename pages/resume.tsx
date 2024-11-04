@@ -1,11 +1,12 @@
 // pages/resume.tsx
-import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import { School, Job } from "@/types/experience";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
+import schoolsData from "@/data/schools.json";
+import jobsData from "@/data/jobs.json";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -135,28 +136,16 @@ const ResumePage: NextPage<ResumePageProps> = ({
 };
 
 export const getStaticProps: GetStaticProps<ResumePageProps> = async () => {
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
-
-  const schoolsCollection = db.collection<School>("schools");
-  const schools: School[] = await schoolsCollection
-    .find({})
-    .sort({ order: -1 })
-    .toArray();
-
-  const jobsCollection = db.collection<Job>("jobs");
-  const jobs: Job[] = await jobsCollection
-    .find({})
-    .sort({ order: -1 })
-    .toArray();
+  const schools = schoolsData.sort((a, b) => (b.order ?? 0) - (a.order ?? 0));
+  const jobs = jobsData.sort((a, b) => (b.order ?? 0) - (a.order ?? 0));
 
   return {
     props: {
       name: basics.name,
       titles: basics.titles,
       socialLinks: basics.socialLinks,
-      schools: JSON.parse(JSON.stringify(schools)),
-      jobs: JSON.parse(JSON.stringify(jobs)),
+      schools,
+      jobs,
     },
     revalidate: 60,
   };

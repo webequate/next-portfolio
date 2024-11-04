@@ -1,11 +1,11 @@
 // pages/index.tsx
-import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
+import projectsData from "@/data/projects.json";
 import Header from "@/components/Header";
 import DownloadCV from "@/components/DownloadCV";
 import Social from "@/components/Social";
@@ -105,14 +105,11 @@ const HomePage: NextPage<HomePageProps> = ({
 };
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
-
-  const projectsCollection = db.collection<Project>("projects");
-  const projects: Project[] = await projectsCollection
-    .find({ "status.featured": true })
-    .sort({ "status.featuredOrder": 1 })
-    .toArray();
+  const featuredProjects = projectsData
+    .filter((project: Project) => project.status?.featured)
+    .sort(
+      (a, b) => (a.status.featuredOrder ?? 0) - (b.status.featuredOrder ?? 0)
+    );
 
   return {
     props: {
@@ -121,7 +118,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       summaryItems: basics.summaryItems,
       resumeLink: basics.resumeLink,
       socialLinks: basics.socialLinks,
-      projects: JSON.parse(JSON.stringify(projects)),
+      projects: featuredProjects,
     },
     revalidate: 60,
   };

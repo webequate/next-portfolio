@@ -1,6 +1,5 @@
 // types/experience.ts
 export type School = {
-  _id: string;
   school: string;
   program: string;
   city: string;
@@ -9,7 +8,6 @@ export type School = {
 };
 
 export type Job = {
-  _id: string;
   company: string;
   role: string;
   city: string;

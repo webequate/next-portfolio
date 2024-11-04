@@ -1,11 +1,12 @@
 // pages/skills.tsx
-import clientPromise from "@/lib/mongodb";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import { FeaturedSkill, RatedSkill } from "@/types/skills";
 import { SocialLink } from "@/types/basics";
 import basics from "@/data/basics.json";
+import featuredSkillsData from "@/data/featuredSkills.json";
+import ratedSkillsData from "@/data/ratedSkills.json";
 import Header from "@/components/Header";
 import SkillsFeatured from "@/components/SkillsFeatured";
 import SkillsRated from "@/components/SkillsRated";
@@ -42,7 +43,7 @@ const SkillsPage: NextPage<SkillsPageProps> = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-        className={"text-base text-dark-2 dark:text-light-2"}
+        className="text-base text-dark-2 dark:text-light-2"
       >
         <div className="text-base text-dark-2 dark:text-light-2">
           <div className="flex flex-col md:flex-row mx-auto">
@@ -63,26 +64,12 @@ const SkillsPage: NextPage<SkillsPageProps> = ({
 };
 
 export const getStaticProps: GetStaticProps<SkillsPageProps> = async () => {
-  const client = await clientPromise;
-  const db = client.db("Portfolio");
-
-  const ratedSkillsCollection = db.collection<RatedSkill>("ratedSkills");
-  const ratedSkills: RatedSkill[] = await ratedSkillsCollection
-    .find()
-    .toArray();
-
-  const featuredSkillsCollection =
-    db.collection<FeaturedSkill>("featuredSkills");
-  const featuredSkills: FeaturedSkill[] = await featuredSkillsCollection
-    .find()
-    .toArray();
-
   return {
     props: {
       name: basics.name,
       socialLinks: basics.socialLinks,
-      ratedSkills: JSON.parse(JSON.stringify(ratedSkills)),
-      featuredSkills: JSON.parse(JSON.stringify(featuredSkills)),
+      ratedSkills: ratedSkillsData,
+      featuredSkills: featuredSkillsData,
     },
     revalidate: 60,
   };
