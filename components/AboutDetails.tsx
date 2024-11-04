@@ -20,7 +20,7 @@ const AboutDetails: React.FC<AboutDetailsProps> = ({
         src="/images/allen-ai.jpg"
         alt="Allen"
         width={574}
-        height={718}
+        height={574}
         priority
         className="w-100 h-100 rounded-xl ring-1 ring-dark-3 dark:ring-light-3 md:mr-4"
       />
