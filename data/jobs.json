@@ -3,10 +3,13 @@
     "company": "WebEquate",
     "role": "Founder & Full Stack Developer",
     "city": "Denver, CO",
-    "startDate": "Aug 2022",
+    "startDate": "August 2022",
     "endDate": "Present",
     "achievements": [
-      "Built new websites and re-built existing portfolio of websites using Next.js, React, TypeScript, MongoDB, Tailwind CSS, and Vercel, to modernize development workflow, streamline site updates, and enhance site speed."
+      "Built dynamic client websites using Next.js, React, TypeScript, MongoDB, and Tailwind CSS.",
+      "Leveraged Next.js and server-side rendering to pre-optimize performance and SEO, while delivering the seamless, interactive user experience of a single-page application.",
+      "Delivered custom digital strategies and a comprehensive suite of services—including social media marketing, web analytics, domain management, hosting, copywriting, SEO, creative asset optimization, and content updates—to enhance client presence and drive measurable growth.",
+      "Utilized cutting-edge generative AI tools—such as Flux, Stable Diffusion, and custom-trained LoRA models—for image and video creation, producing high-quality, tailored visual content across diverse creative projects."
     ],
     "order": 17
   },
@@ -17,9 +20,9 @@
     "startDate": "July 2021",
     "endDate": "July 2022",
     "achievements": [
-      "Provided and maintained tools, infrastructure, and documentation to enable Etsy product teams to leverage modern front end development practices.",
-      "Supported Mobius, a framework for development of interactive server-rendered React component islands, able to inter-communicate once hydrated using a shared Redux store, while still maintaining site speed for shoppers and search engines.",
-      "Participated in replacement of Underscore library with native JavaScript / TypeScript, to provide a more consistent developer experience and to improve site performance."
+      "Developed software, tools, infrastructure, and documentation empowering product engineers to adopt modern front-end technologies—such as React—within a monolithic PHP environment, while preserving site speed for shoppers and search engines.",
+      "Enhanced and supported a framework for interactive, server-rendered React component islands, enabling intercommunication post-hydration via a shared Redux store.",
+      "Improved site performance and developer experience by replacing the Underscore library with native JavaScript and TypeScript."
     ],
     "order": 16
   },
@@ -27,12 +30,12 @@
     "company": "DISH Network",
     "role": "Front End Software Developer (Contract)",
     "city": "Englewood, CO",
-    "startDate": "Jun 2019",
-    "endDate": "Mar 2020",
+    "startDate": "June 2019",
+    "endDate": "March 2020",
     "achievements": [
-      "Developed in JavaScript, primarily using React and Redux, for OnTech Smart Services, an e-commerce site focused on selling smart home devices and expert installation.",
-      "Developed user interface features, both customer-facing and internal, often integrating with back end RESTful APIs, on a cross-functional, full stack Scrum team.",
-      "Improved Where’s My Tech, a Shopify app with a Ruby on Rails and JavaScript codebase, using corporate APIs to dynamically update a map showing technician location, van direction, and route details."
+      "Developed features for OnTech, a Shopify-based e-commerce site integrated with DISH Network's back-end systems, using JavaScript, React, and Redux to support sales of smart home devices and installation services.",
+      "Engineered seamless integration between front-end UI components and complex back-end systems via RESTful APIs, collaborating within a cross-functional, full stack Scrum team to deliver both customer-facing and internal tools.",
+      "Enhanced the \"Where's My Tech\" Shopify app (Ruby on Rails and JavaScript), leveraging corporate APIs to dynamically display technician locations and routes."
     ],
     "order": 15
   },
@@ -40,11 +43,11 @@
     "company": "WebEquate",
     "role": "Founder & Full Stack Developer",
     "city": "Denver, CO",
-    "startDate": "Mar 2018",
+    "startDate": "March 2018",
     "endDate": "July 2021",
     "achievements": [
-      "Developed, maintained, and updated RogerHaydenJohnson.com, the official artist website, using PHP and MySQL, upgraded with a mobile first responsive design.",
-      "Built the Allen’s Aliens social media marketing campaign, incorporating swag giveaways at events, lead-generating business cards, an Instagram profile, a Facebook page, and a fully responsive website."
+      "Developed and maintained RogerHaydenJohnson.com, the official artist website, using PHP, MySQL, and SCSS, and implemented a mobile-first, responsive design to enhance user experience across devices.",
+      "Created and executed the Allen's Aliens social media marketing campaign, integrating event-based giveaways, lead-generating business cards, an Instagram profile, Facebook page, and a responsive website to drive audience engagement and brand visibility."
     ],
     "order": 14
   },
@@ -52,12 +55,12 @@
     "company": "JackRabbit (formerly Running Specialty Group)",
     "role": "E-Commerce Front End Developer",
     "city": "Denver, CO",
-    "startDate": "Sep 2015",
-    "endDate": "Feb 2018",
+    "startDate": "September 2015",
+    "endDate": "February 2018",
     "achievements": [
-      "Performed front end development in a Magento e-commerce environment.",
-      "Developed responsive landing pages, CMS templates, and user experience enhancements using HTML, Sass, Bootstrap, CSS media queries, and custom JavaScript and jQuery.",
-      "Integrated paid advertising platforms, installed numerous third-party tracking pixels, and configured dynamic product feed delivery."
+      "Developed and maintained front-end features within a Magento e-commerce environment, enhancing site usability and performance.",
+      "Created responsive landing pages, CMS templates, and UX improvements using HTML, SCSS, Bootstrap, CSS media queries, and custom JavaScript/jQuery.",
+      "Collaborated with marketing partners to integrate paid advertising platforms, implement third-party tracking pixels, and configure dynamic product feeds to optimize campaigns and improve conversion tracking."
     ],
     "order": 13
   },
@@ -65,10 +68,10 @@
     "company": "Gates Corporation",
     "role": "Lead Front End Developer (Contract)",
     "city": "Denver, CO",
-    "startDate": "Jan 2015",
-    "endDate": "Mar 2015",
+    "startDate": "January 2015",
+    "endDate": "March 2015",
     "achievements": [
-      "Initiated design and AngularJS implementation of a web application for equipment tracking on tablet and desktop."
+      "Led the design and front-end development of a C# .NET web application for equipment tracking, initiating AngularJS implementation optimized for both tablet and desktop use."
     ],
     "order": 12
   },
@@ -77,9 +80,9 @@
     "role": "Front End Developer (Contract)",
     "city": "Centennial, CO",
     "startDate": "May 2014",
-    "endDate": "Nov 2014",
+    "endDate": "November 2014",
     "achievements": [
-      "Implemented feature enhancements and design upgrades to the company's financial advisor website, built in Ruby on Rails, as a front-end focused member of an Agile team working with AngularJS."
+      "Served as a front-end specialist on an Agile team, developing with AngularJS and Ruby on Rails for the company's financial advisor platform."
     ],
     "order": 11
   },
@@ -88,9 +91,10 @@
     "role": "Senior Web Engineer",
     "city": "Denver, CO",
     "startDate": "May 2013",
-    "endDate": "Nov 2013",
+    "endDate": "November 2013",
     "achievements": [
-      "Developed and themed online stores on the Magento e-commerce platform, acted as ScrumMaster for two small development teams, and learned Ruby on Rails development."
+      "Developed and customized Magento e-commerce stores and served as ScrumMaster for two small Agile teams.",
+      "Contributed to internal Ruby on Rails projects to expand technical capabilities."
     ],
     "order": 10
   },
@@ -98,10 +102,10 @@
     "company": "Experian",
     "role": "Web Developer (Contract)",
     "city": "Denver, CO",
-    "startDate": "Dec 2012",
+    "startDate": "December 2012",
     "endDate": "May 2013",
     "achievements": [
-      "Performed front end development for Experian’s UK credit monitoring and identity theft protection sites."
+      "Contributed front-end development for Experian's UK credit monitoring and identity protection websites."
     ],
     "order": 9
   },
@@ -109,12 +113,12 @@
     "company": "Intela",
     "role": "UI Developer / ScrumMaster",
     "city": "Boulder, CO",
-    "startDate": "Mar 2010",
-    "endDate": "Dec 2012",
+    "startDate": "March 2010",
+    "endDate": "December 2012",
     "achievements": [
-      "Lead UI developer and ScrumMaster for a 7 member UI team, focused on building online properties to generate leads for advertisers in 9 international markets.",
-      "Built landing pages from Photoshop designs, and developed a JavaScript / jQuery code library to integrate a new RESTful API for lead validation using internal and third-party services.",
-      "Conducted daily standups and bi-weekly retrospectives, interfaced with product owner, project managers, and back end team, and coordinated twice weekly code releases."
+      "Led a 7-member UI team as both Lead Developer and ScrumMaster, delivering high-performing online properties that generated qualified leads for advertisers across 9 international markets.",
+      "Developed responsive landing pages from Photoshop designs and created a reusable JavaScript/jQuery library to integrate a new RESTful API for lead validation using internal and third-party services.",
+      "Facilitated Agile ceremonies, including daily stand-ups, bi-weekly retrospectives, and coordinated twice-weekly code releases while collaborating closely with product owners, project managers, and back-end teams."
     ],
     "order": 8
   },
@@ -122,10 +126,10 @@
     "company": "Numeric Analytics",
     "role": "Independent Contractor",
     "city": "Golden, CO",
-    "startDate": "Dec 2009",
-    "endDate": "Mar 2010",
+    "startDate": "December 2009",
+    "endDate": "March 2010",
     "achievements": [
-      "Implemented custom web analytics and tracking solutions for client companies using a vanilla JavaScript framework built to integrate with Omniture."
+      "Implemented custom web analytics and tracking solutions using a vanilla JavaScript framework integrated with Omniture for client companies."
     ],
     "order": 7
   },
@@ -134,10 +138,9 @@
     "role": "Web Developer (Contract)",
     "city": "Pittsburgh, PA",
     "startDate": "May 2009",
-    "endDate": "Dec 2009",
+    "endDate": "December 2009",
     "achievements": [
-      "Modified Highmark's health insurance websites to meet Section 508 accessibility standards.",
-      "Overhauled HTML, CSS, and JavaScript to better separate content, presentation, and behavior."
+      "Updated health insurance websites to meet Section 508 accessibility standards by refactoring HTML, CSS, and JavaScript for improved separation of content, presentation, and behavior."
     ],
     "order": 6
   },
@@ -148,9 +151,9 @@
     "startDate": "July 2007",
     "endDate": "May 2009",
     "achievements": [
-      "Developed and maintained a wide range of dynamic, database-driven client websites using PHP and MySQL.",
-      "Handled search engine optimization (SEO), pay-per-click (PPC) advertising with AdWords, user tracking and analysis with Google Analytics, and affiliate marketing using LinkShare.",
-      "Implemented a social networking and viral marketing strategy for a regional tourism office, incorporating Facebook, Twitter, YouTube, Flickr, and a WordPress blog."
+      "Developed and maintained dynamic, database-driven client websites using PHP and MySQL.",
+      "Managed SEO, PPC campaigns (AdWords), user tracking (Google Analytics), and affiliate marketing through LinkShare to drive client visibility and engagement.",
+      "Implemented social networking and viral marketing strategies for a regional tourism office, integrating Facebook, Twitter, YouTube, Flickr, and WordPress."
     ],
     "order": 5
   },
@@ -158,11 +161,11 @@
     "company": "RJ Lee Group",
     "role": "Software Engineer",
     "city": "Pittsburgh, PA",
-    "startDate": "Aug 2006",
+    "startDate": "August 2006",
     "endDate": "July 2007",
     "achievements": [
-      "Developed laboratory management software using Java, Visual Basic .NET, C#, and ActionScript.",
-      "Maintained the corporate website using PHP, HTML, CSS, Flash, and Photoshop."
+      "Developed laboratory management software to streamline lab operations and data management, using Java, Visual Basic .NET, C#, and ActionScript.",
+      "Maintained and updated the corporate website with PHP, HTML, CSS, Flash, and Photoshop."
     ],
     "order": 4
   },
@@ -171,9 +174,9 @@
     "role": "Founder & Web Developer",
     "city": "Pittsburgh, PA",
     "startDate": "July 2004",
-    "endDate": "Aug 2006",
+    "endDate": "August 2006",
     "achievements": [
-      "Designed and developed dynamic database-driven client websites using PHP and MySQL."
+      "Designed and developed dynamic, database-driven client websites using PHP, MySQL, HTML, and CSS, while managing client relationships and project delivery."
     ],
     "order": 3
   },
@@ -181,10 +184,10 @@
     "company": "The Titan Corporation",
     "role": "Scientific Programmer",
     "city": "San Diego, CA",
-    "startDate": "Aug 2002",
+    "startDate": "August 2002",
     "endDate": "June 2004",
     "achievements": [
-      "Developed software tools to model systems in nuclear and natural radiation using Java and JSP."
+      "Developed software tools for modeling and analysis of nuclear and natural radiation systems using Java and JSP to support scientific research and simulations."
     ],
     "order": 2
   },
@@ -193,9 +196,9 @@
     "role": "Software Developer",
     "city": "Pittsburgh, PA",
     "startDate": "July 2000",
-    "endDate": "Oct 2001",
+    "endDate": "October 2001",
     "achievements": [
-      "Designed and implemented intelligent cognitive tutoring software using Java and Lisp."
+      "Designed and implemented intelligent cognitive tutoring software using Java and Lisp to enhance personalized learning experiences."
     ],
     "order": 1
   }

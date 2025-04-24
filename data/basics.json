@@ -2,26 +2,27 @@
   "name": "Allen Johnson",
   "titles": [
     "Full Stack Web Developer",
-    "Front End Software Engineer"
+    "Front-End Software Engineer"
   ],
   "summaryItems": [
-    "I am a veteran full stack developer and front end engineer based in Denver, Colorado.",
+    "I am a seasoned full stack developer based in Denver, Colorado.",
+    "I have strong expertise in front-end technologies, including JavaScript, React, HTML, and CSS.",
+    "I am experienced across diverse environments such as Next.js, Node.js, PHP, Java, .NET, and Ruby on Rails.",
     "I built this site using Next.js, React, TypeScript, and MongoDB, and I deploy to Vercel.",
     "I enjoy travel, hiking, photography, electronic music, generative AI, and foreign languages."
   ],
   "aboutIntro": "I'm Allen Johnson. I live in Denver, Colorado, where I build websites.",
   "aboutItems": [
-    "I am a senior full stack developer and front end engineer with 20+ years of software development experience in many different tech stacks and industries. I am adept at working with JavaScript, HTML, CSS, and React in diverse back-end environments including Next.js, Node.js, PHP, Java, and Ruby on Rails.",
-    "I recently spent a year contracting with a team at Etsy to facilitate server-side rendering of React component islands, able to communicate using a shared Redux store. This helped product engineers to provide enhanced user experiences for Etsy customers, while still maintaining fast page load times, through on-demand hydration of static content with interactive features.",
-    "In the time since Etsy, I have focused mostly on my own business, WebEquate. I have built new websites and re-built my existing portfolio of websites using Next.js, React, TypeScript, MongoDB, Tailwind CSS, and Vercel, to modernize development workflow, streamline site updates, and enhance site speed.",
-    "I am currently seeking a new opportunity to contribute to a dynamic and collaborative team or to an interesting project or initiative, with a preference for mostly remote work.",
+    "I am a seasoned full stack developer with strong expertise in front-end technologies, including JavaScript, React, HTML, and CSS.",
+    "I am experienced across diverse environments such as Next.js, Node.js, PHP, Java, .NET, and Ruby on Rails.",
+    "I bring a proven track record in performance optimization, e-commerce, and digital strategy, along with a passion for contributing to collaborative teams and delivering impactful, user-centered solutions.",
     "I also enjoy travel, hiking, photography, electronic music, generative AI, and foreign languages."
   ],
   "contactIntro": "Please send me a message if you have any questions about my skills and experience, or if you would like to inquire about hiring me for your project or team.",
   "location": "Denver, Colorado",
   "phone": "412.708.8946",
   "website": "portfolio.webequate.com",
-  "resumeLink": "http://portfolio.webequate.com/resume/AllenJohnson-Resume.pdf",
+  "resumeLink": "http://portfolio.webequate.com/resume/AllenJohnson-Resume-Long.pdf",
   "socialLinks": [
     {
       "name": "github",
