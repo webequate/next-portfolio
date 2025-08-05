@@ -14,7 +14,15 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ socialLink }) => {
   const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
-  const route = router.pathname;
+  const asPath = router.asPath;
+
+  // Determine if the link should be active based on the prefix in the path
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return asPath === "/" || asPath.startsWith("/featured"); // Home & featured
+    }
+    return asPath.startsWith(path); // Other prefixes
+  };
 
   function toggleMenu() {
     setShowMenu(!showMenu);
@@ -35,42 +43,42 @@ const Header: React.FC<HeaderProps> = ({ socialLink }) => {
               <Link
                 href="/"
                 aria-label="Home"
-                className={route === "/" ? "active" : ""}
+                className={isActive("/") ? "active" : ""}
               >
                 <span>Home</span>
               </Link>
               <Link
                 href="/about"
                 aria-label="About"
-                className={route === "/about" ? "active" : ""}
+                className={isActive("/about") ? "active" : ""}
               >
                 <span>About</span>
               </Link>
               <Link
                 href="/projects"
                 aria-label="Projects"
-                className={route.startsWith("/projects") ? "active" : ""}
+                className={isActive("/projects") ? "active" : ""}
               >
                 <span>Projects</span>
               </Link>
               <Link
                 href="/resume"
                 aria-label="Resume"
-                className={route === "/resume" ? "active" : ""}
+                className={isActive("/resume") ? "active" : ""}
               >
                 <span>Resume</span>
               </Link>
               <Link
                 href="/skills"
                 aria-label="Skills"
-                className={route === "/skills" ? "active" : ""}
+                className={isActive("/skills") ? "active" : ""}
               >
                 <span>Skills</span>
               </Link>
               <Link
                 href="/contact"
                 aria-label="Contact"
-                className={route === "/contact" ? "active" : ""}
+                className={isActive("/contact") ? "active" : ""}
               >
                 <span>Contact</span>
               </Link>
@@ -93,42 +101,42 @@ const Header: React.FC<HeaderProps> = ({ socialLink }) => {
           <Link
             href="/"
             aria-label="Home"
-            className={route === "/" ? "active" : ""}
+            className={isActive("/") ? "active" : ""}
           >
             <span>Home</span>
           </Link>
           <Link
             href="/about"
             aria-label="About"
-            className={route === "/about" ? "active" : ""}
+            className={isActive("/about") ? "active" : ""}
           >
             <span>About</span>
           </Link>
           <Link
             href="/projects"
             aria-label="Projects"
-            className={route.startsWith("/projects") ? "active" : ""}
+            className={isActive("/projects") ? "active" : ""}
           >
             <span>Projects</span>
           </Link>
           <Link
             href="/resume"
             aria-label="Resume"
-            className={route === "/resume" ? "active" : ""}
+            className={isActive("/resume") ? "active" : ""}
           >
             <span>Resume</span>
           </Link>
           <Link
             href="/skills"
             aria-label="Skills"
-            className={route === "/skills" ? "active" : ""}
+            className={isActive("/skills") ? "active" : ""}
           >
             <span>Skills</span>
           </Link>
           <Link
             href="/contact"
             aria-label="Contact"
-            className={route === "/contact" ? "active" : ""}
+            className={isActive("/contact") ? "active" : ""}
           >
             <span>Contact</span>
           </Link>
