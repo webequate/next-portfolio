@@ -71,7 +71,7 @@ a {
   .nav-secondary a {
     @apply hover:text-accent-dark dark:hover:text-accent-light mx-1 sm:mx-4 py-2 transition duration-300;
   }
-  .nav-secondary a.active span {
+  .nav-secondary a.active {
     @apply text-accent-dark dark:text-accent-light;
   }
   /* Mobile navigation */
