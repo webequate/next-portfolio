@@ -2,19 +2,19 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    formats: ["image/webp"],
+    formats: ["image/avif", "image/webp"],
   },
   async redirects() {
     return [
       {
-        source: '/:path*',
+        source: "/:path*",
         has: [
           {
-            type: 'host',
-            value: 'www.webequate.com',
+            type: "host",
+            value: "www.webequate.com",
           },
         ],
-        destination: 'https://webequate.com/:path*',
+        destination: "https://webequate.com/:path*",
         permanent: true,
       },
     ];
