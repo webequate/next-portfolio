@@ -75,7 +75,7 @@ const Project = ({
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href={`https://webequate.com/projects/${project.id}`}
+          href={`https://portfolio.webequate.com/projects/${project.id}`}
         />
       </Head>
 

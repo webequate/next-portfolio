@@ -35,7 +35,7 @@ const SkillsPage: NextPage<SkillsPageProps> = ({
           key="desc"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://webequate.com/skills" />
+        <link rel="canonical" href="https://portfolio.webequate.com/skills" />
       </Head>
 
       <Header socialLink={socialLinks[0]} />

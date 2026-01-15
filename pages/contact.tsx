@@ -34,7 +34,7 @@ const ContactPage: NextPage<ContactPageProps> = ({
         <title>{`${name} | Contact`}</title>
         <meta name="description" content="Contact Allen Johnson." key="desc" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://webequate.com/contact" />
+        <link rel="canonical" href="https://portfolio.webequate.com/contact" />
       </Head>
 
       <Header socialLink={socialLinks[0]} />

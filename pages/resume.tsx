@@ -35,7 +35,7 @@ const ResumePage: NextPage<ResumePageProps> = ({
           key="desc"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://webequate.com/resume" />
+        <link rel="canonical" href="https://portfolio.webequate.com/resume" />
       </Head>
 
       <Header socialLink={socialLinks[0]} />
