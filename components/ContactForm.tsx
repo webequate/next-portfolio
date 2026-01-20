@@ -10,6 +10,7 @@ const ContactForm: React.FC = () => {
     email: "",
     subject: "",
     message: "",
+    website: "", // Honeypot field
   });
 
   const handleChange = (
@@ -35,6 +36,7 @@ const ContactForm: React.FC = () => {
       email: "",
       subject: "",
       message: "",
+      website: "",
     });
   };
 
@@ -78,6 +80,22 @@ const ContactForm: React.FC = () => {
           onChange={handleChange}
           value={formData.subject}
         />
+
+        {/* Honeypot field - hidden from users */}
+        <div
+          style={{ position: "absolute", left: "-9999px" }}
+          aria-hidden="true"
+        >
+          <input
+            type="text"
+            name="website"
+            id="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.website || ""}
+            onChange={handleChange}
+          />
+        </div>
 
         <div className="mb-4">
           <label
