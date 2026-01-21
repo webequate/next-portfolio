@@ -73,10 +73,6 @@ const Project = ({
           key="desc"
         />
         <meta name="robots" content="noindex, nofollow" />
-        <link
-          rel="canonical"
-          href={`https://portfolio.webequate.com/featured/${project.id}`}
-        />
       </Head>
 
       <Header socialLink={socialLinks[0]} />
