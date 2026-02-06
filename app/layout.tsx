@@ -45,9 +45,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
         />
       </head>
-      <body>
+      <body className="flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-7xl sm:px-8 lg:px-16">
             <Layout>{children}</Layout>
             <UseScrollToTop />
           </div>
