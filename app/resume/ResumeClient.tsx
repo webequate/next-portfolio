@@ -1,16 +1,12 @@
-// pages/resume.tsx
-import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+"use client";
+
 import { motion } from "framer-motion";
 import { School, Job } from "@/types/experience";
 import { SocialLink } from "@/types/basics";
-import basics from "@/data/basics.json";
-import schoolsData from "@/data/schools.json";
-import jobsData from "@/data/jobs.json";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-type ResumePageProps = {
+type ResumeClientProps = {
   name: string;
   titles: string[];
   socialLinks: SocialLink[];
@@ -18,26 +14,15 @@ type ResumePageProps = {
   jobs: Job[];
 };
 
-const ResumePage: NextPage<ResumePageProps> = ({
+export default function ResumeClient({
   name,
   titles,
   socialLinks,
   schools,
   jobs,
-}) => {
+}: ResumeClientProps) {
   return (
     <>
-      <Head>
-        <title>{`${name} | Resume`}</title>
-        <meta
-          name="description"
-          content="Allen Johnson's professional experience."
-          key="desc"
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://portfolio.webequate.com/resume" />
-      </Head>
-
       <Header socialLink={socialLinks[0]} />
 
       <motion.div
@@ -45,7 +30,7 @@ const ResumePage: NextPage<ResumePageProps> = ({
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
       >
-        <div className="mx-auto lg:flex lg:flex-row mt-4 mb-10">
+        <div className="lg:flex lg:flex-row mt-4 mb-10">
           <div className="w-full lg:w-1/3"></div>
           <div className="w-full lg:w-2/3">
             <h1 className="text-3xl lg:text-5xl font-bold uppercase mb-4">
@@ -63,7 +48,7 @@ const ResumePage: NextPage<ResumePageProps> = ({
           </div>
         </div>
 
-        <div className="lg:flex lg:flex-row mx-auto align-top">
+        <div className="lg:flex lg:flex-row align-top">
           <div className="w-full lg:w-1/3">
             <h3 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
               Education
@@ -92,7 +77,7 @@ const ResumePage: NextPage<ResumePageProps> = ({
           </div>
         </div>
 
-        <div className="lg:flex lg:flex-row mx-auto my-12 align-top">
+        <div className="lg:flex lg:flex-row my-12 align-top">
           <div className="w-full lg:w-1/3">
             <h3 className="text-xl text-align-top font-bold uppercase decoration-dark-1 dark:decoration-light-1 pr-8 pb-8 lg:pb-0">
               Work Experience
@@ -132,24 +117,6 @@ const ResumePage: NextPage<ResumePageProps> = ({
       </motion.div>
 
       <Footer name={name} socialLinks={socialLinks} />
-    </>
+    </div>
   );
-};
-
-export const getStaticProps: GetStaticProps<ResumePageProps> = async () => {
-  const schools = schoolsData.sort((a, b) => (b.order ?? 0) - (a.order ?? 0));
-  const jobs = jobsData.sort((a, b) => (b.order ?? 0) - (a.order ?? 0));
-
-  return {
-    props: {
-      name: basics.name,
-      titles: basics.titles,
-      socialLinks: basics.socialLinks,
-      schools,
-      jobs,
-    },
-    revalidate: 60,
-  };
-};
-
-export default ResumePage;
+}

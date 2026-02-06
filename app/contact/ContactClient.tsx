@@ -1,15 +1,13 @@
-// pages/contact.tsx
-import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+"use client";
+
 import { motion } from "framer-motion";
 import { SocialLink } from "@/types/basics";
-import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import ContactForm from "@/components/ContactForm";
 import ContactDetails from "@/components/ContactDetails";
 import Footer from "@/components/Footer";
 
-type ContactPageProps = {
+type ContactClientProps = {
   name: string;
   contactIntro: string;
   location: string;
@@ -19,7 +17,7 @@ type ContactPageProps = {
   socialLinks: SocialLink[];
 };
 
-const ContactPage: NextPage<ContactPageProps> = ({
+export default function ContactClient({
   name,
   contactIntro,
   location,
@@ -27,16 +25,9 @@ const ContactPage: NextPage<ContactPageProps> = ({
   website,
   resumeLink,
   socialLinks,
-}) => {
+}: ContactClientProps) {
   return (
     <div className="mx-auto">
-      <Head>
-        <title>{`${name} | Contact`}</title>
-        <meta name="description" content="Contact Allen Johnson." key="desc" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://portfolio.webequate.com/contact" />
-      </Head>
-
       <Header socialLink={socialLinks[0]} />
 
       <motion.div
@@ -63,23 +54,6 @@ const ContactPage: NextPage<ContactPageProps> = ({
       </motion.div>
 
       <Footer name={name} socialLinks={socialLinks} />
-    </div>
+    </>
   );
-};
-
-export const getStaticProps: GetStaticProps<ContactPageProps> = async () => {
-  return {
-    props: {
-      name: basics.name,
-      contactIntro: basics.contactIntro,
-      location: basics.location,
-      phone: basics.phone,
-      website: basics.website,
-      resumeLink: basics.resumeLink,
-      socialLinks: basics.socialLinks,
-    },
-    revalidate: 60,
-  };
-};
-
-export default ContactPage;
+}

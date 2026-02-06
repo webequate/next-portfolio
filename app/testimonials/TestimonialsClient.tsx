@@ -1,37 +1,24 @@
-// pages/testimonials.tsx
-import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+"use client";
+
 import { motion } from "framer-motion";
 import { Testimonial } from "@/types/testimonial";
 import { SocialLink } from "@/types/basics";
-import basics from "@/data/basics.json";
-import testimonialsData from "@/data/testimonials.json";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-type TestimonialsPageProps = {
+type TestimonialsClientProps = {
   name: string;
   socialLinks: SocialLink[];
   testimonials: Testimonial[];
 };
 
-const TestimonialsPage: NextPage<TestimonialsPageProps> = ({
+export default function TestimonialsClient({
   name,
   socialLinks,
   testimonials,
-}) => {
+}: TestimonialsClientProps) {
   return (
     <div className="mx-auto">
-      <Head>
-        <title>{`${name} | Testimonials`}</title>
-        <meta
-          name="description"
-          content="Testimonials about Allen Johnson."
-          key="desc"
-        />
-        <meta name="robots" content="index, follow" />
-      </Head>
-
       <Header socialLink={socialLinks[0]} />
 
       <motion.div
@@ -57,19 +44,4 @@ const TestimonialsPage: NextPage<TestimonialsPageProps> = ({
       <Footer name={name} socialLinks={socialLinks} />
     </div>
   );
-};
-
-export const getStaticProps: GetStaticProps<
-  TestimonialsPageProps
-> = async () => {
-  return {
-    props: {
-      name: basics.name,
-      socialLinks: basics.socialLinks,
-      testimonials: testimonialsData,
-    },
-    revalidate: 60,
-  };
-};
-
-export default TestimonialsPage;
+}

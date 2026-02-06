@@ -1,15 +1,13 @@
-// pages/about.tsx
-import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+"use client";
+
 import { motion } from "framer-motion";
 import { SocialLink } from "@/types/basics";
-import basics from "@/data/basics.json";
 import Header from "@/components/Header";
 import AboutContent from "@/components/AboutContent";
 import AboutDetails from "@/components/AboutDetails";
 import Footer from "@/components/Footer";
 
-type AboutPageProps = {
+type AboutClientProps = {
   aboutIntro: string;
   aboutItems: string[];
   name: string;
@@ -19,7 +17,7 @@ type AboutPageProps = {
   socialLinks: SocialLink[];
 };
 
-const AboutPage: NextPage<AboutPageProps> = ({
+export default function AboutClient({
   aboutIntro,
   aboutItems,
   name,
@@ -27,16 +25,9 @@ const AboutPage: NextPage<AboutPageProps> = ({
   phone,
   website,
   socialLinks,
-}) => {
+}: AboutClientProps) {
   return (
     <div className="mx-auto">
-      <Head>
-        <title>{`${name} | About`}</title>
-        <meta name="description" content="About Allen Johnson." key="desc" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://portfolio.webequate.com/about" />
-      </Head>
-
       <Header socialLink={socialLinks[0]} />
 
       <motion.div
@@ -63,21 +54,4 @@ const AboutPage: NextPage<AboutPageProps> = ({
       </motion.div>
     </div>
   );
-};
-
-export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
-  return {
-    props: {
-      aboutIntro: basics.aboutIntro,
-      aboutItems: basics.aboutItems,
-      name: basics.name,
-      location: basics.location,
-      phone: basics.phone,
-      website: basics.website,
-      socialLinks: basics.socialLinks,
-    },
-    revalidate: 60,
-  };
-};
-
-export default AboutPage;
+}

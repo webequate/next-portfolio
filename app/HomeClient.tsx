@@ -1,11 +1,8 @@
-// pages/index.tsx
-import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+"use client";
+
 import { motion } from "framer-motion";
 import { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
-import basics from "@/data/basics.json";
-import projectsData from "@/data/projects.json";
 import Header from "@/components/Header";
 import DownloadCV from "@/components/DownloadCV";
 import Social from "@/components/Social";
@@ -14,7 +11,7 @@ import Heading from "@/components/Heading";
 import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
 
-type HomePageProps = {
+type HomeClientProps = {
   name: string;
   titles: string[];
   summaryItems: string[];
@@ -23,27 +20,16 @@ type HomePageProps = {
   projects: Project[];
 };
 
-const HomePage: NextPage<HomePageProps> = ({
+export default function HomeClient({
   name,
   titles,
   summaryItems,
   resumeLink,
   socialLinks,
   projects,
-}) => {
+}: HomeClientProps) {
   return (
     <div className="mx-auto">
-      <Head>
-        <title>{`${name}`}</title>
-        <meta
-          name="description"
-          content="Allen Johnson's portfolio website."
-          key="desc"
-        />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://portfolio.webequate.com" />
-      </Head>
-
       <Header socialLink={socialLinks[0]} />
 
       <motion.div
@@ -103,26 +89,4 @@ const HomePage: NextPage<HomePageProps> = ({
       <Footer name={name} socialLinks={socialLinks} />
     </div>
   );
-};
-
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const featuredProjects = projectsData
-    .filter((project: Project) => project.status?.featured)
-    .sort(
-      (a, b) => (a.status.featuredOrder ?? 0) - (b.status.featuredOrder ?? 0)
-    );
-
-  return {
-    props: {
-      name: basics.name,
-      titles: basics.titles,
-      summaryItems: basics.summaryItems,
-      resumeLink: basics.resumeLink,
-      socialLinks: basics.socialLinks,
-      projects: featuredProjects,
-    },
-    revalidate: 60,
-  };
-};
-
-export default HomePage;
+}
