@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { SocialLink } from "@/types/basics";
 import Header from "@/components/Header";
 import ContactForm from "@/components/ContactForm";
@@ -30,11 +29,7 @@ export default function ContactClient({
     <div className="mx-auto">
       <Header socialLink={socialLinks[0]} />
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      >
+      <div>
         <div className="flex flex-col-reverse lg:flex-row text-base text-dark-2 dark:text-light-2">
           <div className="w-full lg:w-1/2 mb-10 lg:mb-0 md:mr-6">
             <ContactForm />
@@ -51,9 +46,9 @@ export default function ContactClient({
             />
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <Footer name={name} socialLinks={socialLinks} />
-    </>
+    </div>
   );
 }

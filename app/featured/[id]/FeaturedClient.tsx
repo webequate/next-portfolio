@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Project } from "@/types/project";
 import { SocialLink } from "@/types/basics";
 import Header from "@/components/Header";
@@ -64,11 +63,7 @@ export default function FeaturedClient({
     <div className="mx-auto">
       <Header socialLink={socialLinks[0]} />
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      >
+      <div>
         <div className="justify-center text-dark-1 dark:text-light-1">
           <ProjectHeader
             title={project.name}
@@ -97,7 +92,7 @@ export default function FeaturedClient({
             desktop={project.screenshots?.desktop}
           />
         </div>
-      </motion.div>
+      </div>
 
       <Footer name={name} socialLinks={socialLinks} />
     </div>

@@ -110,3 +110,13 @@ a {
 html {
   scrollbar-gutter: stable both-edges;
 }
+
+/* Page transition fade */
+.page-transition {
+  opacity: 1;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.page-transition.fade-out {
+  opacity: 0;
+}

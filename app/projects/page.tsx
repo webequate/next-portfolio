@@ -3,7 +3,10 @@ import { Metadata } from "next";
 import basics from "@/data/basics.json";
 import projectsData from "@/data/projects.json";
 import { Project } from "@/types/project";
-import ProjectsClient from "./ProjectsClient";
+import Header from "@/components/Header";
+import Heading from "@/components/Heading";
+import ProjectGrid from "@/components/ProjectGrid";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -24,10 +27,15 @@ export default function ProjectsPage() {
   const { name, socialLinks } = basics;
 
   return (
-    <ProjectsClient
-      name={name}
-      socialLinks={socialLinks}
-      projects={activeProjects}
-    />
+    <div className="mx-auto">
+      <Header socialLink={socialLinks[0]} />
+
+      <div className="text-base text-dark-2 dark:text-light-2">
+        <Heading text="Projects" />
+        <ProjectGrid projects={activeProjects} path="projects" />
+      </div>
+
+      <Footer name={name} socialLinks={socialLinks} />
+    </div>
   );
 }
