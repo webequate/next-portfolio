@@ -29,12 +29,12 @@ export default function AboutPage() {
   } = basics;
 
   return (
-    <div className="mx-auto">
+    <>
       <Header socialLink={socialLinks[0]} />
 
       <div>
         <div className="flex flex-col lg:flex-row-reverse text-base text-dark-2 dark:text-light-2">
-          <div className="w-full lg:w-1/2 mb-2 lg:mb-0 md:ml-6">
+          <div className="w-full lg:w-1/2 mb-2 lg:mb-0">
             <AboutContent aboutIntro={aboutIntro} aboutItems={aboutItems} />
           </div>
 
@@ -50,6 +50,6 @@ export default function AboutPage() {
 
         <Footer name={name} socialLinks={socialLinks} />
       </div>
-    </div>
+    </>
   );
 }

@@ -24,7 +24,7 @@ export default function ResumePage() {
   const { name, titles, socialLinks } = basics;
 
   return (
-    <div className="mx-auto">
+    <>
       <Header socialLink={socialLinks[0]} />
 
       <div>
@@ -115,6 +115,6 @@ export default function ResumePage() {
       </div>
 
       <Footer name={name} socialLinks={socialLinks} />
-    </div>
+    </>
   );
 }

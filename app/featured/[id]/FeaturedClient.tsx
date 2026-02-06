@@ -60,7 +60,7 @@ export default function FeaturedClient({
   });
 
   return (
-    <div className="mx-auto">
+    <>
       <Header socialLink={socialLinks[0]} />
 
       <div>
@@ -95,6 +95,6 @@ export default function FeaturedClient({
       </div>
 
       <Footer name={name} socialLinks={socialLinks} />
-    </div>
+    </>
   );
 }

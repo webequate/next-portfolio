@@ -32,12 +32,12 @@ export default function HomePage() {
   const { name, titles, summaryItems, resumeLink, socialLinks } = basics;
 
   return (
-    <div className="mx-auto">
+    <>
       <Header socialLink={socialLinks[0]} />
 
       <div>
         <div className="flex flex-col-reverse lg:flex-row">
-          <div className="w-full lg:w-1/2 mb-10 lg:mb-8 md:mr-6">
+          <div className="w-full lg:w-1/2 mb-10 lg:mb-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-dark-1 dark:text-light-1 mb-4 uppercase">
               {name}
             </h1>
@@ -81,6 +81,6 @@ export default function HomePage() {
       </div>
 
       <Footer name={name} socialLinks={socialLinks} />
-    </div>
+    </>
   );
 }

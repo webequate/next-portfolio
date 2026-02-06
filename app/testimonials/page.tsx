@@ -17,7 +17,7 @@ export default function TestimonialsPage() {
   const { name, socialLinks } = basics;
 
   return (
-    <div className="mx-auto">
+    <>
       <Header socialLink={socialLinks[0]} />
 
       <div className="text-base text-dark-2 dark:text-light-2">
@@ -37,6 +37,6 @@ export default function TestimonialsPage() {
       </div>
 
       <Footer name={name} socialLinks={socialLinks} />
-    </div>
+    </>
   );
 }

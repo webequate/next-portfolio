@@ -60,7 +60,7 @@ export default function ProjectClient({
   });
 
   return (
-    <div className="mx-auto">
+    <>
       <Header socialLink={socialLinks[0]} />
 
       <div>
@@ -95,6 +95,6 @@ export default function ProjectClient({
       </div>
 
       <Footer name={name} socialLinks={socialLinks} />
-    </div>
+    </>
   );
 }
