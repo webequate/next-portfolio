@@ -35,7 +35,7 @@ export default function ContactClient({
             <ContactForm />
           </div>
 
-          <div className="w-full lg:w-1/2 mb-10 lg:mb-0\">
+          <div className="w-full lg:w-1/2 mb-10 lg:mb-0 lg:pl-8">
             <ContactDetails
               name={name}
               contactIntro={contactIntro}
