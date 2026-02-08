@@ -37,17 +37,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
-        />
-      </head>
-      <body className="flex flex-col">
+      <head></head>
+      <body className="flex flex-col items-center">
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div className="mx-auto max-w-7xl sm:px-8 lg:px-16">
+          <div className="w-full max-w-7xl sm:px-8 lg:px-16">
             <Layout>{children}</Layout>
             <UseScrollToTop />
           </div>

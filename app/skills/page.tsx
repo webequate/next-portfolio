@@ -27,12 +27,12 @@ export default function SkillsPage() {
       <Header socialLink={socialLinks[0]} />
 
       <div className="text-base text-dark-2 dark:text-light-2">
-        <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-1/3 mb-10 lg:mb-0">
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="md:w-1/3">
             <SkillsFeatured featuredSkills={featuredSkillsData} />
           </div>
 
-          <div className="w-full md:w-2/3 mb-10 lg:mb-0">
+          <div className="md:w-2/3">
             <SkillsRated ratedSkills={ratedSkillsData} />
           </div>
         </div>
