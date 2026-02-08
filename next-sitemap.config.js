@@ -15,5 +15,5 @@ module.exports = {
     const result = [];
     return result;
   },
-  sortEntries: true,
+  sortEntries: false,
 };
