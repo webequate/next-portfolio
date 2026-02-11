@@ -15,6 +15,12 @@ const ContactForm: React.FC = () => {
     website: "", // Honeypot field
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<{
+    text: string;
+    isSuccess: boolean;
+  } | null>(null);
+
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -24,22 +30,45 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const response = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    setIsLoading(true);
+    setStatusMessage(null);
 
-    const result = await response.json();
-    alert(result.message);
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-      website: "",
-    });
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatusMessage({
+          text: "Email sent successfully!",
+          isSuccess: true,
+        });
+
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          website: "",
+        });
+      } else {
+        setStatusMessage({
+          text: result.message || "Error sending email.",
+          isSuccess: false,
+        });
+      }
+    } catch {
+      setStatusMessage({
+        text: "Error sending email.",
+        isSuccess: false,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -123,10 +152,24 @@ const ContactForm: React.FC = () => {
           <button
             type="submit"
             aria-label="Send Message"
-            className="text-light-1 dark:text-light-1 bg-accent-dark dark:bg-accent-dark hover:bg-accent-light dark:hover:bg-accent-light font-general-medium flex justify-center items-center w-40 sm:w-40 mb-6 sm:mb-0 text-lg py-2.5 sm:py-3 rounded-lg duration-300"
+            disabled={isLoading}
+            className="text-light-1 dark:text-light-1 bg-accent-dark dark:bg-accent-dark hover:bg-accent-light dark:hover:bg-accent-light font-general-medium flex justify-center items-center w-40 sm:w-40 mb-6 sm:mb-0 text-lg py-2.5 sm:py-3 rounded-lg duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            <span className="text-sm sm:text-lg">Send Message</span>
+            <span className="text-sm sm:text-lg">
+              {isLoading ? "Sending..." : "Send Message"}
+            </span>
           </button>
+          {statusMessage && (
+            <p
+              className={`mt-3 text-sm font-medium ${
+                statusMessage.isSuccess
+                  ? "text-green-600 dark:text-green-400"
+                  : "text-red-600 dark:text-red-400"
+              }`}
+            >
+              {statusMessage.text}
+            </p>
+          )}
         </div>
       </form>
     </div>

@@ -7,7 +7,7 @@ import projectsData from "@/data/projects.json";
 import FeaturedClient from "./FeaturedClient";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export async function generateStaticParams() {
@@ -21,7 +21,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = projectsData.find((p: Project) => p.id === params.id);
+  const { id } = await params;
+  const project = projectsData.find((p: Project) => p.id === id);
 
   if (!project) {
     return {
@@ -38,14 +39,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export const revalidate = 60;
 
-export default function FeaturedPage({ params }: Props) {
+export default async function FeaturedPage({ params }: Props) {
+  const { id } = await params;
   const projects = projectsData
     .filter((project: Project) => project.status?.featured)
     .sort(
       (a, b) => (a.status.featuredOrder ?? 0) - (b.status.featuredOrder ?? 0)
     );
 
-  const projectIndex = projects.findIndex((p) => p.id === params.id);
+  const projectIndex = projects.findIndex((p) => p.id === id);
   const project = projects[projectIndex];
   const prevProject = projectIndex > 0 ? projects[projectIndex - 1] : null;
   const nextProject =

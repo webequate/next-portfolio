@@ -1,6 +1,11 @@
 // app/api/send-email/route.tsx
 import { NextRequest, NextResponse } from "next/server";
 import { ContactForm } from "@/interfaces/ContactForm";
+import { sendEmail } from "@/lib/sendEmail";
+import {
+  generateContactEmailHTML,
+  generateContactEmailText,
+} from "@/lib/contactEmailTemplate";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -17,31 +22,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Lazy load email dependencies to avoid build-time issues with mjml
-    const [sendMail, Contact] = await Promise.all([
-      import("@/emails").then((mod) => mod.default),
-      import("@/emails/Contact").then((mod) => mod.default),
-    ]);
+    const emailText = generateContactEmailText({
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    });
 
-    await sendMail({
+    const emailHTML = generateContactEmailHTML({
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    });
+
+    await sendEmail({
       from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_TO,
+      to: process.env.EMAIL_TO || "",
       cc: process.env.EMAIL_CC,
       subject: formData.subject,
-      component: (
-        <Contact
-          name={formData.name}
-          email={formData.email}
-          subject={formData.subject}
-          message={formData.message}
-        />
-      ),
-      text: `
-      Name: ${formData.name}
-      Email: ${formData.email}
-      Subject: ${formData.subject}
-      Message: ${formData.message}
-    `,
+      text: emailText,
+      html: emailHTML,
     });
 
     return NextResponse.json(
