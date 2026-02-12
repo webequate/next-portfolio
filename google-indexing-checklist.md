@@ -2,25 +2,25 @@
 
 Track which pages have been indexed by Google or have had indexing requested.
 
-- [ ] https://portfolio.webequate.com
-- [ ] https://portfolio.webequate.com/about
-- [ ] https://portfolio.webequate.com/contact
-- [ ] https://portfolio.webequate.com/projects
-- [ ] https://portfolio.webequate.com/projects/ai
-- [ ] https://portfolio.webequate.com/projects/aliens
-- [ ] https://portfolio.webequate.com/projects/anna
-- [ ] https://portfolio.webequate.com/projects/bingo
-- [ ] https://portfolio.webequate.com/projects/bras
-- [ ] https://portfolio.webequate.com/projects/fireman
-- [ ] https://portfolio.webequate.com/projects/intela
-- [ ] https://portfolio.webequate.com/projects/jackrabbit
-- [ ] https://portfolio.webequate.com/projects/nyc
-- [ ] https://portfolio.webequate.com/projects/release
-- [ ] https://portfolio.webequate.com/projects/roger
-- [ ] https://portfolio.webequate.com/projects/train
-- [ ] https://portfolio.webequate.com/projects/wool
-- [ ] https://portfolio.webequate.com/resume
-- [ ] https://portfolio.webequate.com/skills
+- [X] https://portfolio.webequate.com
+- [X] https://portfolio.webequate.com/about
+- [x] https://portfolio.webequate.com/contact
+- [X] https://portfolio.webequate.com/projects
+- [x] https://portfolio.webequate.com/projects/ai
+- [X] https://portfolio.webequate.com/projects/aliens
+- [X] https://portfolio.webequate.com/projects/anna
+- [X] https://portfolio.webequate.com/projects/bingo
+- [x] https://portfolio.webequate.com/projects/bras
+- [x] https://portfolio.webequate.com/projects/fireman
+- [X] https://portfolio.webequate.com/projects/intela
+- [X] https://portfolio.webequate.com/projects/jackrabbit
+- [X] https://portfolio.webequate.com/projects/nyc
+- [x] https://portfolio.webequate.com/projects/release
+- [x] https://portfolio.webequate.com/projects/roger
+- [X] https://portfolio.webequate.com/projects/train
+- [X] https://portfolio.webequate.com/projects/wool
+- [X] https://portfolio.webequate.com/resume
+- [x] https://portfolio.webequate.com/skills
 
 ---
 
