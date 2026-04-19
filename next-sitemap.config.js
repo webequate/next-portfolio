@@ -11,7 +11,7 @@ module.exports = {
       lastmod: new Date().toISOString(),
     };
   },
-  additionalPaths: async (config) => {
+  additionalPaths: async (_config) => {
     const result = [];
     return result;
   },

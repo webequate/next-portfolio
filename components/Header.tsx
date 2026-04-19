@@ -13,7 +13,7 @@ interface HeaderProps {
   socialLink: SocialLink;
 }
 
-const Header: React.FC<HeaderProps> = ({ socialLink }) => {
+const Header: React.FC<HeaderProps> = () => {
   const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
 
