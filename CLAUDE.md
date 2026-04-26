@@ -474,6 +474,96 @@ Non-public pages (`/featured/*`, `/testimonials`) use `robots: "noindex, nofollo
 
 ---
 
+## Testing
+
+The project uses **Vitest** with **React Testing Library** and **jsdom**. Tests live under `__tests__/`, mirroring the source tree.
+
+```
+__tests__/
+├── mocks/
+│   ├── next-image.tsx     # Lightweight <img> stub — replaces next/image at test time
+│   └── next-link.tsx      # Lightweight <a> stub — replaces next/link at test time
+├── lib/
+│   ├── contactEmailTemplate.test.ts   # generateContactEmailHTML, generateContactEmailText, HTML escaping
+│   └── sendEmail.test.ts              # sendEmail() with nodemailer mocked via vi.hoisted()
+├── components/
+│   ├── ContactForm.test.tsx   # Field rendering, loading state, success/error paths, fetch payload
+│   ├── Footer.test.tsx        # Nav links, isActive logic, social buttons
+│   ├── Header.test.tsx        # Nav links, isActive logic, hamburger toggle
+│   ├── PageTransition.test.tsx# fade-out on route change, 200ms timer clears it
+│   ├── ProjectGrid.test.tsx   # Renders project links with correct /{path}/{id} hrefs
+│   ├── ProjectHeader.test.tsx # Prev/Next links, invisible placeholders, path prop
+│   ├── SkillBar.test.tsx      # IntersectionObserver callback, w-0 → level*20% fill
+│   ├── Social.test.tsx        # Maps socialLinks array to SocialButton instances
+│   └── SocialButton.test.tsx  # Icon variants, href, target="_blank", fallback
+└── hooks/
+    └── useThemeSwitcher.test.tsx  # localStorage mock, defaults, restore, toggle, no infinite loop
+```
+
+### Configuration
+
+- **`vitest.config.ts`** — jsdom environment, `globals: true`, `vite-tsconfig-paths` for the `@/` alias, resolve aliases that swap `next/image` and `next/link` for the lightweight stubs in `__tests__/mocks/`.
+- **`vitest.setup.ts`** — imports `@testing-library/jest-dom` and installs a global `IntersectionObserver` stub (jsdom does not provide one).
+
+### Key patterns
+
+**Mocking `next/navigation`** — components that call `usePathname()` (Header, Footer, PageTransition) mock the module per test file:
+
+```ts
+let mockPathname = "/";
+vi.mock("next/navigation", () => ({ usePathname: () => mockPathname }));
+```
+
+**Mocking `next-themes`** — components that call `useTheme()` (Header via ThemeSwitcher):
+
+```ts
+vi.mock("next-themes", () => ({
+  useTheme: () => ({ theme: "dark", setTheme: vi.fn() }),
+}));
+```
+
+**Mocking nodemailer** — `sendEmail.ts` creates a transport at module level, so the mock must use `vi.hoisted()` to run before the `vi.mock()` factory:
+
+```ts
+const { mockSendMail } = vi.hoisted(() => {
+  const mockSendMail = vi.fn().mockResolvedValue({ messageId: "test-id" });
+  return { mockSendMail };
+});
+vi.mock("nodemailer", () => ({
+  default: { createTransport: vi.fn(() => ({ sendMail: mockSendMail })) },
+}));
+```
+
+**`IntersectionObserver` in SkillBar** — replace the global with a plain function that captures the callback so tests can trigger it manually:
+
+```ts
+function makeMockObserver(callback) {
+  capturedCallback = callback;
+  return { observe(el) { ... }, unobserve: unobserveSpy, disconnect() {} };
+}
+Object.defineProperty(window, "IntersectionObserver", { value: makeMockObserver, ... });
+```
+
+Do not use `vi.fn()` as the `IntersectionObserver` value — it cannot be called as a constructor.
+
+**`HomeButton` accessible name collision** — `HomeButton` has `aria-label="Home"`, so `getAllByRole("link", { name: "Home" })` returns three links (HomeButton + desktop nav + mobile nav). Scope nav assertions to `.nav-primary` using `within()`:
+
+```ts
+const nav = container.querySelector(".nav-primary") as HTMLElement;
+within(nav).getByRole("link", { name: "Home" });
+```
+
+**ContactForm success message** — the component hardcodes `"Email sent successfully!"` on `response.ok`, regardless of the value in `result.message`. Tests that wait for submission completion should use `findByText("Email sent successfully!")`, not the mocked API message.
+
+### Commands
+
+```bash
+npm run test         # run all tests once (vitest run)
+npm run test:watch   # run in watch mode (vitest)
+```
+
+---
+
 ## Commands
 
 ```bash
@@ -482,6 +572,8 @@ npm run build          # production build
 npm run lint           # eslint . (ESLint v9 flat config)
 npm run format         # prettier --write on all source files
 npm run build:sitemap  # next-sitemap + custom sort/dedup script
+npm run test           # run all tests once (vitest run)
+npm run test:watch     # run in watch mode (vitest)
 ```
 
 ---
